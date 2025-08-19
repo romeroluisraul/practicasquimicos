@@ -1,0 +1,371 @@
+\documentclass[11pt,a4paper,twoside]{article}%
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Thursday, December 26, 2013 11:29:10}
+%TCIDATA{LastRevised=Thursday, February 13, 2014 10:46:50}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\topmargin -0.7in
+\oddsidemargin -0.30in
+\evensidemargin -0.7in
+\textwidth 7.3in
+\textheight 9.5in
+\begin{document}
+
+\begin{center}
+\textbf{\textsf{Estad\'{\i}stica (Qu\'{\i}mica) - Primer Cuatrimestre- 2020 - Coronavirus}}\\
+\vspace{0.2cm}
+\textbf{Pr\'{a}ctica 2 - Variables aleatorias\vspace{-0.1in}}
+\end{center}
+
+\begin{enumerate}
+\item Sea $X$ una variable aleatoria discreta con $P(X=0)=0.25,$
+$P(X=1)=0.125,$ $P(X=2)=0.125$ y $\ P(X=3)=0.5$. Implemente y grafique, en R, la funci\'{o}n de
+probabilidad puntual y la funci\'{o}n de distribuci\'{o}n acumulada de $X$.
+%Calcule $E(X)$ y $Var(X)$.
+
+\item La siguiente tabla muestra la funci\'{o}n de distribuci\'{o}n acumulada
+de una variable aleatoria discreta $X$:%
+\[
+F_{X}\left(  x\right)  =\left\{
+\begin{array}
+[c]{lll}%
+0 &  & \text{si }x<0\\
+0.1 &  & \text{si }0\leq x<1\\
+0.2 &  & \text{si }1\leq x<2\\
+0.7 &  & \text{si }2\leq x<3\\
+0.8 &  & \text{si }3\leq x<4\\
+1 &  & \text{si }x\geq4
+\end{array}
+\right.
+\]
+
+
+\begin{enumerate}
+\item Indique los  valores que puede tomar la variable $X$, es decir calcule su rango. Obtenga  su funci\'on de probabilidad puntual.
+
+\item Calcule $P(X>3)$.
+
+\item Calcule $P(2<X\leq4)$.
+
+\item Calcule $P(2\leq X\leq4)$ y la probabilidad de su complemento.
+\end{enumerate}
+
+\item Un examen de elecci\'on m\'ultiple est\'{a} compuesto de 15 preguntas, cada
+pregunta con 5 respuestas posibles de las cuales s\'{o}lo una es correcta.
+Suponga que uno de los estudiantes que realizan el examen contesta las
+preguntas al azar.
+
+\begin{enumerate}
+	\item \textquestiondown Cu\'{a}l es la probabilidad de que no conteste ninguna correctamente?
+	
+	\item \textquestiondown Cu\'{a}l es la probabilidad de que conteste al menos 3
+	preguntas correctamente?
+	
+ \item Sea $X$ el n\'umero de respuestas correctas de un alumno que contesta al azar. \textquestiondown C\'omo de llama la  distribuci\'on de $X$?
+ \textquestiondown Cu\'ales son sus par\'ametros?  	
+	
+%	\item \textquestiondown Cu\'{a}l es el n\'{u}mero de respuestas correctas esperado?
+\end{enumerate}
+
+
+\item \label{particulas} El n\'{u}mero de part\'{\i}culas emitidas por una fuente radioactiva, en
+un d\'{\i}a, es una variable aleatoria $X$ con distribuci\'{o}n de Poisson. Si
+la probabilidad de no emitir ninguna part\'{\i}cula en ese per\'{\i}odo de
+tiempo es $e^{-1/3}$, calcule la
+probabilidad de que en un d\'{\i}a la fuente emita por lo menos 2 part\'{\i}culas.
+
+
+
+\item Calcule $E(X)$ y $Var(X)$  siendo $X$
+\begin{enumerate}
+	\item la variable aleatoria definida en el ejercicio 1.
+	\item la variable aleatoria definida en el ejercicio 2.
+	\item la variable aleatoria definida en el item (c) el ejercicio 3.
+	\item la variable aleatoria definida en el  ejercicio \ref{particulas}.
+	\end{enumerate}
+
+
+%{\color{red}\item Una ruleta tiene 37 n\'{u}meros, del 0 al 36. Cada n\'{u}mero de la
+%ruleta tiene asignado un color: hay 18 n\'{u}meros de color negro, 18 rojos y
+%uno verde, que es el cero. En cada juego de la ruleta se arroja una bolita en
+%un disco que gira, de modo que cuando la ruleta deja de girar, la bolita cae
+%en el casillero que le corresponde a cada n\'{u}mero (del 0 al 36) con igual
+%probabilidad. Una apuesta posible al jugar a este juego es apostar a lo que se
+%llama \textquotedblleft color\textquotedblright: se apuesta, por ejemplo \$1
+%al color rojo (o bien al negro, pero al verde no se puede apostar). Si el
+%n\'{u}mero que sale es rojo, el apostador gana, y en otro caso pierde.
+%
+%\begin{enumerate}
+%\item En un casino cl\'{a}sico, en caso de salir rojo el n\'{u}mero apostado,
+%el apostador recibe un premio de \$2, (por lo tanto su ganancia neta en el
+%caso de ganar es \$1), y no recibe nada en el caso de perder (por lo tanto, en
+%este caso, su ganancia neta es -\$1). Hallar la esperanza y la varianza de la
+%ganancia neta del apostador al jugar \textquotedblleft color
+%rojo\textquotedblright\ en un casino cl\'{a}sico.
+%
+%\item Un juego de apuestas se dice equilibrado si la esperanza de la ganancia neta
+%es igual a 0, es decir, en promedio quien apuesta no gana ni pierde.
+%\textquestiondown Es equilibrado el juego que proponen los casinos
+%cl\'{a}sicos cuando apostamos a un color dado?
+%
+%\item Un casino generoso decide ofrecer un poco m\'{a}s de \$1 como premio si
+%un jugador apuesta \$1 a color (rojo, por ejemplo).
+%\textquestiondown Cu\'{a}nto deber\'{\i}a pagar el casino para que el juego
+%resulte equilibrado?
+%\end{enumerate}
+%}
+
+\item La probabilidad de que el vapor se condense en un tubo de aluminio de
+cubierta delgada a 10 atm de presi\'{o}n es de $0.4$. Se prueban 15 tubos de
+este tipo bajo las mismas condiciones en forma independiente.
+
+\begin{enumerate}
+\item \textquestiondown Cu\'{a}l es el valor esperado de la cantidad de tubos
+de este tipo en los que el vapor se condensa?
+
+\item Determinar la probabilidad de que:
+
+\begin{enumerate}
+\item el vapor se condense en (exactamente) 4 de los tubos.
+
+\item el vapor no se condense en m\'{a}s de 10 tubos.
+\end{enumerate}
+
+\item Si la cantidad de tubos en los cuales el vapor se condensa dista de su
+valor esperado en menos de 3, se considera que la prueba es aceptable. Un
+laboratorio realiza diariamente una prueba sobre 15 tubos durante 40 d\'{\i}as
+de manera independiente. Considere la variable aleatoria $Y$ que cuenta la cantidad de d\'{\i}as en los cuales la prueba resulta aceptable,
+\textquestiondown qu\'{e} distribuci\'{o}n tiene $Y$?
+\textquestiondown Cu\'{a}l es el n\'{u}mero esperado de d\'{\i}as en los
+cu\'{a}les la prueba resulta aceptable?
+\end{enumerate}
+
+
+
+\item Sea $X$ la cantidad de autos por 5 minutos que pasan por un peaje.
+Suponga que $X$ sigue una distribuci\'{o}n de Poisson con $E(X^{2})=6$.
+
+\begin{enumerate}
+\item Halle la probabilidad de que en 5 minutos pasen 4 autos o m\'{a}s.
+
+\item Observamos el n\'{u}mero de autos que pasan por el peaje durante 7
+per\'{\i}odos consecutivos de 5 minutos, \textquestiondown cu\'{a}l es la
+probabilidad de que en por lo menos uno de esos per\'{\i}odos pasen 4 autos o m\'{a}s?
+
+\item El sistema puede cobrar hasta 3 autos por 5 minutos de lo contrario (si
+pasan 4 o m\'{a}s) se levanta la barrera y no se les cobra peaje. Sea $Y$ la
+cantidad de autos que pagar\'{a}n peaje en los pr\'{o}ximos 5 minutos.
+Calcule el  rango de $Y$.
+\textquestiondown La distribuci\'{o}n de $Y$ es Poisson? Calcule la
+funci\'on de probabilidad puntual de $Y$, su esperanza y su varianza.
+
+\item Si cada peaje vale 60 pesos, halle el valor esperado y la varianza de lo
+recaudado en 5 minutos.
+\end{enumerate}
+
+\item Un espect\'{a}culo dispone de capacidad para 2000 espectadores, un total de 10 personas decide ir al espect\'{a}culo sin haber comprado entradas sabiendo que las entradas est\'an agotadas. De experiencias previas, se sabe que el 1\% de los espectadores que
+han comprado su entrada no concurren al espect\'{a}culo, por lo que se ha
+implementado una reventa de estas localidades de \'{u}ltimo minuto.
+\textquestiondown Cu\'{a}l es la probabilidad de que las 10 personas puedan conseguir su entrada para el espect\'{a}culo en la reventa? Sea $X$ la cantidad de personas que no se presentan al
+espect\'{a}culo, \textquestiondown qu\'{e} distribuci\'{o}n tiene $X$? Exprese
+la probabilidad pedida usando la variable $X$. Si puede calc\'{u}lela; de lo contrario aprox\'imela.
+
+
+%\textcolor{red}{\item En la industria farmace\'utica se realizan controles para constatar la calidad de los medicamentos producidos. Debido a sus grandes costos, para efectuar estos controles de calidad se toman muestras del lote producido y se analizan en detalle. Supongamos que cierta empresa farmace\'utica produce de cierto medicamento un lote diario de 1500 comprimidos. El personal de control de calidad extrae al azar una muestra de tama\~no 30 y eval\'ua si cumple con los controles; de no cumplirlos denominar\'a a ese comprimido \emph{defectuoso}. Para que el lote pueda ser distribu\'ido a las farmacias para su venta, debe haber en la muestra a lo sumo un comprimido defectuoso. Por un problema en un proceso, en el d\'ia de la fecha se fabrican $d$ comprimidos defectuosos.
+%\begin{enumerate}
+%\item Si $d=45$, \textquestiondown cu\'al es la probabilidad de que el lote de hoy sea distribu\'ido a las farmacias?
+%\item Implemente y grafique en R la funci\'on que depende de $d$ que calcula la probabilidad de que el lote de hoy sea distribu\'ido a las farmacias.
+%\item \textquestiondown Cu\'al es la m\'axima cantidad de comprimidos defectuosos $d$ que puede haber en el lote de hoy para que con probabilidad 0,95 sea distribu\'ido a las farmacias?
+%\end{enumerate}}
+
+
+\item La temperatura para la cual se produce cierta reacci\'{o}n qu\'{\i}mica
+es una variable aleatoria X con funci\'{o}n de densidad dada por:%
+\[
+f_{X}\left(  x\right)  =\left\{
+\begin{array}
+[c]{lll}%
+c\left(  1+x^{2}\right)  &  & \text{si }-1\leq x\leq2\\
+&  & \\
+0 &  & \text{en otro caso}%
+\end{array}
+\right.
+\]
+
+
+\begin{enumerate}
+\item Halle $c$.
+
+\item Obtenga la funci\'{o}n de distribuci\'{o}n acumulada $F_{X}(x)$.
+
+\item Calcule la probabilidad de que la temperatura sea superior a 1.
+
+\item Calcule la mediana de $X$.
+
+\item Implemente y grafique en R a $F_X(x)$.
+
+\item Calcule $E(X)$ y $Var(X)$.
+\end{enumerate}
+
+
+\item En un laboratorio se producen reacciones qu\'imicas, seg\'un la variable aleatoria $X$ presentada en el ejercicio anterior, en forma independiente hasta lograr la primera reacci\'{o}n a temperatura superior a 1. \textquestiondown Cu\'{a}l es la probabilidad de que la primera reacci\'{o}n a
+temperatura superior a 1 se produzca en la quinta experiencia?
+
+
+
+\item Sea $X$ el tiempo de vida (en meses) de un componente electr\'{o}nico en
+uso continuo. Supongamos que $X$ sigue una distribuci\'{o}n exponencial con
+par\'{a}metro $\lambda=0.1$.
+
+\begin{enumerate}
+\item Halle la funci\'{o}n de distribuci\'{o}n acumulada de $X$, su esperanza,
+su mediana y su varianza.
+
+\item Halle la probabilidad de que el tiempo de vida sea mayor que 10 meses.
+
+\item Halle la probabilidad de que el tiempo de vida est\'{e} entre 5 y 15 meses.
+
+\item Halle el 1\% percentil, es decir el valor $t$ tal que la probabilidad de
+que el tiempo de vida sea menor que t meses sea $0.01$.
+
+\item Calcule la probabilidad de que el tiempo de vida sea mayor que 25 meses
+sabiendo que super\'{o} los 15 meses. Compare los resultados de (b) y (e).
+\end{enumerate}
+
+\item Sea $X\sim\mathcal{U}(0,40).$
+
+\begin{enumerate}
+\item Halle la funci\'{o}n de distribuci\'{o}n acumulada de $X$, su esperanza,
+su mediana y su varianza.
+
+\item Halle la probabilidad de que $X$ sea mayor que 10.
+
+\item Calcule la probabilidad de que X sea mayor que 25 sabiendo que $X>15$.
+Compare con (b).
+
+\item Compare el resultado de este ejercicio con el del ejercicio anterior.
+\end{enumerate}
+
+\end{enumerate}
+
+\noindent\emph{Advertencia}: Es MUY IMPORTANTE saber usar la tabla normal, m\'as all\'a de los comandos de R que tambi\'en se pueden utilizar. Una buena pr\'actica es hacer uso de los dos recursos para confirmar la correcta utilizaci\'on de ellos.
+
+\begin{enumerate}
+
+\item[13.] Sea $X\sim\mathcal{N}(16,25)$.  Exprese las siguientes probabilidades en t\'erminos de la funci\'on $\phi(u)=P(Z\leq u)$, cuando $Z\sim \mathcal N(0,1)$. Utilice la tabla normal para calcular probabilidades. Verifique sus resultados utilizando  pnorm y qnorm de R. 
+\begin{enumerate}
+\item calcular:
+
+\begin{enumerate}
+\item $P(X\geq17)$
+
+\item $P(X\leq14)$
+
+\item $P(X<14)$
+
+\item $P(13<X<20)$
+
+\item $P(10\leq X<15)$
+
+\item $P(X=16)$
+\end{enumerate}
+
+\item encontrar un valor $a$ de manera tal que:
+
+\begin{enumerate}
+\item $P(X<a)=0.5$. Recuerde que $a$ es la mediana o el 50\% percentil de $X$.
+
+\item $P(X\geq a)=0.6.$
+
+\item $P(\left\vert X-16\right\vert <a)=0.95.$
+
+\item $P\left(\frac{\left\vert X-16\right\vert }{5}\leq a\right)=0.95.$
+\end{enumerate}
+\end{enumerate}
+
+\item[14.] El peso esperado o medio de un art\'{\i}culo que proviene de cierta
+l\'{\i}nea de producci\'{o}n es de 83kg.
+
+\begin{enumerate}
+\item El 95\% de los art\'{\i}culos pesan entre 81 y 85kg, calcule el
+desv\'{\i}o est\'{a}ndar del peso de un art\'{\i}culo elegido al azar de la
+l\'{\i}nea de producci\'{o}n. \textquestiondown Qu\'{e} supuestos deben
+hacerse para responder a esta pregunta?
+
+\item Bajo los supuestos que hizo en (a), si elegimos 6 art\'{\i}culos al azar
+de la l\'{\i}nea de producci\'{o}n, \textquestiondown cu\'{a}l es la
+probabilidad de que el peso de exactamente 3 art\'{\i}culos diste de su valor
+esperado a lo sumo en 2 kg?
+\end{enumerate}
+
+\item[15.] Se desea determinar una magnitud $\mu$. Para ello se realiza una
+medici\'{o}n que denotaremos con $X$. El modelo para $X$ es
+\[
+X=\mu+\varepsilon
+\]
+donde $\mu$ es la verdadera magnitud desconocida y $\varepsilon$ es la
+variable aleatoria que denota el error de medici\'{o}n. Asumimos que la
+esperanza de $\varepsilon$ es cero y llamamos $\sigma^{2}$ a su varianza. Note
+que observamos a $X$ pero $\varepsilon$ no es observable. El supuesto de que
+$E\left(  \varepsilon\right)  =0$ refleja la creencia en que el m\'{e}todo de
+medici\'{o}n empleado es exacto, es decir no produce errores sistem\'{a}ticos.
+La varianza del error representa la precisi\'{o}n del m\'{e}todo de medici\'{o}n empleado.
+
+\begin{enumerate}
+\item[(a)] Halle $E(X)$ y $Var(X)$.
+\end{enumerate}
+
+Asuma que el error de medici\'{o}n tiene una distribuci\'{o}n normal con media
+cero y desviaci\'{o}n est\'{a}ndar $\sigma$, es decir $\varepsilon\sim
+N\left(  0,\sigma^{2}\right)  $.
+
+\begin{enumerate}
+\item[(b)] Obtenga la distribuci\'{o}n de X, su esperanza y su varianza.
+
+\item[(c)] Asuma que la desviaci\'{o}n est\'{a}ndar $\sigma=0.2$. Calcule la
+probabilidad de que la medici\'{o}n diste de la verdadera magnitud $\mu$ en
+menos de $0.3$ unidades. Note que no fue necesario conocer el valor de $\mu$
+para realizar este c\'{a}lculo.
+
+\item[(d)] Obtenga una expresi\'{o}n, en funci\'{o}n de $\sigma$, para la probabilidad de que la
+medici\'{o}n diste de la verdadera magnitud $\mu$ en menos de $0.3$ unidades. Implemente y grafique la funci\'on en R para estudiar su monoton\'{\i}a. Interprete este comportamiento.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document} 

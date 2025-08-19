@@ -1,0 +1,253 @@
+\documentclass[11pt,a4paper,twoside]{article}%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Thursday, December 26, 2013 11:29:10}
+%TCIDATA{LastRevised=Thursday, February 13, 2014 10:53:32}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\topmargin -0.2in
+\oddsidemargin -0.2in
+\evensidemargin -0.2in
+\textwidth 7in
+\textheight 9in
+\begin{document}
+
+\begin{center}
+\textbf{\textsf{Estad\'{\i}stica (Qu\'{\i}mica) - Primer Cuatrimestre - 2020 - Coronavirus}}\\
+
+\textbf{Pr\'{a}ctica 5 - Estimaci\'{o}n - Intervalos de Confianza - Primera parte\vspace
+{-0.1in}}
+\bigskip
+
+\end{center}
+
+En todos los ejercicios propuestos
+
+\begin{enumerate}
+\item[a)] defina las variables aleatorias y los par\'{a}metros involucrados.
+
+\item[b)] de ser posible indique:
+
+\begin{enumerate}
+\item[i.] la distribuci\'{o}n de las variables aleatorias
+
+\item[ii.] el significado intuitivo de los par\'{a}metros.
+\end{enumerate}
+
+\item[c)] compare los resultados de hacer las cuentas a mano con las salidas
+obtenidas con el R, de manera de verificar las primeras y aprender a usar las
+segundas, en aquellos ejercicios en los que ambas cosas sean posibles.
+\end{enumerate}
+
+\bigskip
+
+{\bf Ejercicios}
+
+\begin{enumerate}
+\item Sea $X_{1},\ldots.X_{n}$ una muestra aleatoria de una distribuci\'{o}n
+con media $\mu$ y varianza $\sigma^{2}$.
+
+\begin{enumerate}
+\item Pruebe que $\overline{X}_{n}^{2}$ no es un estimador insesgado de
+$\mu^{2}$.
+
+\item \textquestiondown Para qu\'{e} valores de $k$ es $\widehat{\mu}%
+^{2}=\left(  \overline{X}_{n}^{2}-ks^{2}\right)  $ un estimador insesgado de
+$\mu^{2}$?
+\end{enumerate}
+
+\item Sea $X_{1},\ldots.X_{n}$ una muestra aleatoria de una distribuci\'{o}n
+Bernoulli de par\'{a}metro $p$ y sea $T_{n}=%
+%TCIMACRO{\dsum \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\sum\limits_{i=1}^{n}}
+%EndExpansion
+X_{i}$. Consideremos un nuevo par\'{a}metro $\theta=p\left(  1-p\right)  $.
+Muestre que
+\[
+\frac{T_{n}\left(  n-T_{n}\right)  }{n\left(  n-1\right)  }%
+\]
+\ es un estimador insesgado de $\theta$.
+
+\item Para determinar la constante de un resorte, se puede medir la oscilaci\'on de una masa $m$ fijada en uno de sus extremos. Mediante
+la f\'ormula $k= 4\pi^2m/T^2$ donde $k$ es la constante del resorte y $T$ es el per\'iodo de oscilaci\'on de dicha masa. 
+ Se realizan mediciones exactas de la masa y del per\'iodo. Asumamos que 
+cada medici\'on de la masa y del per\'iodo siguen distribuciones  normales, con varianza 0.1 y 0.05, respectivamente. 
+De $5$ mediciones de la masa y $4$ del per\'iodo se obtuvieron medias muestrales $0.52$ y $1.3$. 
+Asumiendo que todas las mediciones son independientes,
+estime la constante del resorte e indique el valor del error de estimaci\'on asociado a la estimaci\'on. 
+
+
+
+\item A partir de un gran n\'{u}mero de mediciones, se sabe que un m\'{e}todo
+para determinar la cantidad de manganeso en un mineral comete errores
+aleatorios con distribuci\'{o}n normal de media cero y desviaci\'{o}n
+est\'{a}ndar 0.09.
+
+\begin{enumerate}
+	\item Se hicieron 5 mediciones de un mismo mineral y se obtuvo un valor
+	promedio de 7.54, calcule un intervalo de confianza con nivel del 99\% para la
+	cantidad de manganeso verdadera que contiene ese mineral.
+	
+	\item \'{I}dem a), pero si se hicieron 10 mediciones.
+	
+	\item \textquestiondown Cu\'{a}ntas mediciones habr\'{\i}a que hacer para que
+	el intervalo de confianza al 99\% tenga una longitud $\leq0.10$?
+\end{enumerate}
+
+
+\item \label{reduccion-peso} Se registr\'{o} el valor (en Kg) de la reducci\'{o}n del peso, de cada
+uno de 16 pacientes elegidos al azar, despu\'{e}s de una semana de
+tratamiento. El promedio de esos 16 valores fue de 3.42Kg. Suponga que la
+p\'{e}rdida de peso luego de una semana de tratamiento es una variable
+aleatoria con distribuci\'{o}n normal.
+
+ Construya un intervalo de confianza del 99\% para el valor medio
+poblacional de la reducci\'{o}n del peso despu\'{e}s de una semana de tratamiento, asumiendo  $\sigma=0.68$Kg. ($\sigma$ conocido). 
+
+
+\item Considere nuevamente el problema planteado en el ejercicio \ref{reduccion-peso}. Construya un intervalo de confianza del 99\% para el valor medio
+poblacional de la reducci\'{o}n del peso despu\'{e}s de una semana de tratamiento, pero ahora $\sigma$  es desconocido  y $s=0.68$Kg.
+ Compare la longitud del  intervalo obtenido con el que contruyo en el ejercicio  \ref{reduccion-peso}. 
+
+
+\item Diez mediciones de recuperaci\'{o}n de bromuro pot\'{a}sico por
+cromatograf\'{\i}a de gas-l\'{\i}quido en muestras de tomates de cierta
+partida arrojaron una media muestral de 782$\mu g/g$ y un desv\'{\i}o
+$s=16.2\mu g/g$. Suponga que las mediciones tienen distribuci\'{o}n normal.
+
+\begin{enumerate}
+\item Halle un intervalo de confianza del 95\% para la media $\left(
+\mu\right)  $ de las mediciones en esta partida de tomates.
+
+\item Suponiendo que el error de medici\'{o}n debido al m\'{e}todo es
+despreciable respecto a la variabilidad entre los tomates y que las 10
+mediciones se realizan para cada uno de 10 tomates, \textquestiondown c\'{o}mo
+debe interpretarse la media $\mu$? \textquestiondown C\'{o}mo debe
+interpretarse $\sigma^{2}$?
+
+\item En cambio, si las 10 mediciones se realizaron sobre el mismo tomate,
+\textquestiondown c\'{o}mo puede interpretarse $\mu$?
+\textquestiondown C\'{o}mo debe interpretarse $\sigma^{2}$?
+
+\item Halle un intervalo de confianza del 95\% para la varianza $\left(
+\sigma^{2}\right)  $ de las mediciones.
+
+\item Halle un intervalo de confianza del 95\% para la desviaci\'{o}n
+est\'{a}ndar $\left(  \sigma\right)  $ de las mediciones.
+\end{enumerate}
+
+\item Se hicieron varias mediciones del contenido de glucosa de una
+soluci\'{o}n. Suponga que estas mediciones siguen un modelo de Gauss sin
+sesgo, es decir, el modelo descripto en el ejercicio 2 de la Pr\'{a}ctica 3,
+cuando los errores tienen distribuci\'{o}n normal.
+
+\begin{enumerate}
+\item Escriba el modelo. Se calcul\'{o} el intervalo de confianza del 95\%
+para la media, que result\'{o} ser $(10.28,11.32)$. \textquestiondown Qu\'{e}
+significa \textquotedblleft la media\textquotedblright\ en este problema?
+
+\item Decir si es verdadero o falso, y explicar:
+
+\begin{enumerate}
+\item Un 95\% de las mediciones observadas pertenecen a ese intervalo.
+
+\item Hay una probabilidad de 0.95 de que la pr\'{o}xima medici\'{o}n caiga en
+el intervalo.
+
+\item Alrededor del 95\% de las veces que uno realice el ensayo y construya el
+intervalo de confianza, \'{e}ste contendr\'{a} la verdadera concentraci\'{o}n
+de glucosa de la soluci\'{o}n.
+
+\item La probabilidad de que el intervalo $(10.28,11.32)$ contenga a la
+verdadera concentraci\'{o}n de glucosa es de 0.95.
+\end{enumerate}
+\end{enumerate}
+
+
+\item Utilizando dos m\'{e}todos de an\'{a}lisis se hicieron determinaciones
+del contenido de hierro de una muestra de un mineral. Se asume que las
+determinaciones correspondientes a ambos m\'{e}todos tienen distribuci\'{o}n
+normal cuyo desv\'io est\'andar es $\sigma=0,1 \%$. Los resultados obtenidos son los siguientes:%
+\begin{align*}
+\text{M\'{e}todo 1}\qquad n_{1}  &  =12\qquad\overline{x}=15.22\%\\
+\text{M\'{e}todo 2}\qquad n_{2}  &  =11\qquad\overline{y}=15.30\%
+\end{align*}
+Calcule la estimaci\'on por intervalo de la diferencia de medias de ambos m\'etodos con nivel de significaci\'on del $95 \%$.
+
+\item Este es un ejemplo en el que se desea estudiar si un cambio en las condiciones de un experimento afecta el resultado. Se est\'{a} estudiando un procedimiento para la determinaci\'{o}n de esta\~{n}o en productos alimenticios. Para ello se tomaron 12 muestras del mismo producto. Se
+eligieron 6 de estas muestras al azar y se llevaron al punto de ebullici\'{o}n
+con HCl a reflujo durante 30 minutos. Con las 6 muestras restantes el tiempo
+de reflujo fue de 70 minutos. Los resultados fueron los siguientes:%
+\[%
+\begin{tabular}
+[c]{cccc}%
+Tiempo de reflujo (m)\qquad & Esta\~{n}o encontrado (mg/Kg) & $\overline{x}$ &
+$s^{2}$\\
+30 & 57, 57, 59, 56, 56, 59 & 57.33 & 1.867\\
+70 & 57, 55, 58, 59, 59, 59 & 57.83 & 2.57
+\end{tabular}
+\ \
+\]
+Suponga que la cantidad de esta\~{n}o encontrada cuando el tiempo de reflujo
+es de 30 minutos es una variable aleatoria con distribuci\'{o}n $N(\mu
+_{1},\sigma_1^{2})$ y dicha distribuci\'{o}n es $N(\mu_{2},\sigma_2^{2})$
+cuando el tiempo de reflujo es de 70 minutos. 
+\begin{enumerate}
+\item Calcule la estimaci\'on por intervalo del cociente de varianzas de esta\~{n}o para los dos tiempos de ebullici\'{o}n con nivel de significaci\'on del $95 \%$.
+\item Suponga que $\sigma_1=\sigma_2$. Calcule el intervalo de confianza estimado con nivel de significaci\'on del $95 \%$ para la diferencia de contenido de esta\~{n}o para los dos tiempos de ebullici\'{o}n.
+\end{enumerate}
+
+\item Una f\'abrica de calzado desea comparar dos tipos de suela (marca A y marca B). Para ello, se coloca una  suela de 2 cm. en  cada zapato de 6 individuos y se miden las suelas de cada pie despu\'es de 3 meses. La tabla a continuaci\'on presenta el grosor de las suelas transcurrido ese tiempo.
+
+\vspace{0.2cm}
+	\begin{tabular}{|c|c|c|}\hline
+		Individuo & Suela Izquierda (marca A)  &Suela Derecha (marca B)\\\hline\hline
+1	&	1.43	&	1.42	\\
+2	&	1.27	&	1.24	\\
+3	&	1.48	&	1.39	\\
+4	&	1.53	&	1.41	\\
+5	&	1.71	&	1.6	\\
+6	&	1.72	&	1.61	\\
+\hline
+\end{tabular}
+
+Se sabe que la diferencia de grosores entre suelas de cada individuo se distribuye normalmente. Calcule la estimaci\'on por intervalo para la diferencia media de grosores entre marcas de suela a nivel 0,95 \textquestiondown Hay diferencia entre la calidad de las suelas? Justifique
+
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,237 @@
+\documentclass[11pt,a4paper,twoside]{article}%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Thursday, December 26, 2013 11:29:10}
+%TCIDATA{LastRevised=Wednesday, March 05, 2014 16:56:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\topmargin -0.7in
+\oddsidemargin -0.30in
+\evensidemargin -0.7in
+\textwidth 7.3in
+\textheight 9.5in
+\begin{document}
+
+
+\begin{center}
+\textbf{\textsf{Estad\'{\i}stica (Qu\'{\i}mica) - Primer Cuatrimestre 2020 - Coronavirus}}
+
+\textbf{Pr\'{a}ctica 8 - Regresi\'{o}n Lineal\vspace{-0.1in}}
+
+\end{center}
+
+\begin{enumerate}
+\item En una experiencia para calibrar un instrumento con el objeto de medir
+la resistencia el\'{e}ctrica de cierto material, se obtuvieron las siguientes
+mediciones:%
+\[
+\text{%
+\begin{tabular}
+[c]{ccccc}%
+$X$ & \multicolumn{1}{|c}{60} & \multicolumn{1}{|c}{70} &
+\multicolumn{1}{|c}{80} & \multicolumn{1}{|c}{100}\\\hline
+$Y$ & \multicolumn{1}{|c}{38} & \multicolumn{1}{|c}{64} &
+\multicolumn{1}{|c}{72} & \multicolumn{1}{|c}{110}\\
+& \multicolumn{1}{|c}{44} & \multicolumn{1}{|c}{70} & \multicolumn{1}{|c}{76}
+& \multicolumn{1}{|c}{118}\\
+& \multicolumn{1}{|c}{50} & \multicolumn{1}{|c}{} & \multicolumn{1}{|c}{82} &
+\multicolumn{1}{|c}{}%
+\end{tabular}
+}%
+\]
+donde $X$ es la resistencia el\'{e}ctrica (en ohms) determinada por un
+m\'{e}todo suficientemente exacto como para ser considerado sin error e $Y$ es
+la medici\'{o}n le\'{\i}da en el instrumento.
+
+\begin{enumerate}
+\item Encontrar un intervalo de confianza del 95\% para el valor esperado de
+$Y$ cuando $X=90$ ohms.
+
+\item Si se toma una nueva porci\'{o}n de material, se mide su resistencia
+el\'{e}ctrica y \'{e}sta resulta 85 ohms, hallar un intervalo de
+predicci\'{o}n del 95\% para la medici\'{o}n a\'{u}n no observada.
+
+\item Suponiendo que se hace una nueva observaci\'{o}n independiente de las
+anteriores y \'{e}sta resulta igual a 73, encontrar una regi\'{o}n de
+confianza del 90\% para el verdadero valor de la resistencia el\'{e}ctrica que
+corresponder\'{a} a ese material (este es el objeto fundamental de la
+experiencia, pues se desea calibrar el instrumento de manera que luego se mida
+s\'{o}lo $Y$ y con esto se pueda tener una idea de cu\'{a}l es la resistencia
+el\'{e}ctrica $X$).
+\end{enumerate}
+
+\item Se analizaron 8 soluciones est\'{a}ndares de plata por
+espectrometr\'{\i}a de absorci\'{o}n at\'{o}mica de llama. Se obtuvieron los
+siguientes resultados:%
+\[
+\text{%
+\begin{tabular}
+[c]{|c|c|c|c|c|c|c|c|c|}\hline
+Concentraci\'{o}n (ng/ml) & 0 & 10 & 20 & 30 & 40 & 50 & 60 & 70\\\hline
+Absorbancia & 0.257 & 0.314 & 0.364 & 0.413 & 0.468 & 0.528 & 0.574 &
+0.635\\\hline
+\end{tabular}
+}%
+\]
+
+
+\begin{enumerate}
+\item Realice el gr\'{a}fico de calibraci\'{o}n, determine la pendiente y la
+ordenada al origen de la recta de cuadrados m\'{\i}nimos.
+
+\item Calcule el IC al 95\% para la pendiente. Lo mismo para la ordenada al origen.
+
+\item Se han hecho 4 an\'{a}lisis para una nueva muestra. Los valores de
+absorbancia observados son: 0.308, 0.314, 0.347 y 0.312. Estime la
+concentraci\'{o}n de plata en esa muestra y calcule un IC al 95\% para dicha concentraci\'{o}n.
+\end{enumerate}
+
+\item Un investigador de marketing estudi\'{o} las ventas anuales de cierto
+producto que fue introducido en el mercado hace 15 a\~{n}os. Los datos de la
+siguiente tabla son%
+\begin{align*}
+X  & =\text{a\~{n}os transcurridos desde el lanzamiento al mercado del
+producto}\\
+Y  & =\text{ventas en miles de unidades.}%
+\end{align*}%
+\[
+\text{%
+\begin{tabular}
+[c]{cc}%
+$X$ & \multicolumn{1}{|c}{$Y$}\\\hline
+1 & \multicolumn{1}{|c}{217}\\
+2 & \multicolumn{1}{|c}{204}\\
+3 & \multicolumn{1}{|c}{215}\\
+4 & \multicolumn{1}{|c}{251}\\
+5 & \multicolumn{1}{|c}{312}\\
+6 & \multicolumn{1}{|c}{293}\\
+7 & \multicolumn{1}{|c}{269}\\
+8 & \multicolumn{1}{|c}{420}\\
+9 & \multicolumn{1}{|c}{337}\\
+10 & \multicolumn{1}{|c}{399}\\
+11 & \multicolumn{1}{|c}{419}\\
+12 & \multicolumn{1}{|c}{320}\\
+13 & \multicolumn{1}{|c}{488}\\
+14 & \multicolumn{1}{|c}{460}\\
+15 & \multicolumn{1}{|c}{371}%
+\end{tabular}
+}%
+\]
+
+
+\begin{enumerate}
+\item Represente estos datos en un diagrama de dispersi\'{o}n.
+\textquestiondown Es razonable suponer que existe una relaci\'{o}n lineal
+entre $X$ e $Y$ que permita predecir $Y$ en funci\'{o}n de $X$?
+
+\item Realice un ajuste por cuadrados m\'{\i}nimos.
+
+\item Obtenga un gr\'{a}fico de residuos versus valores ajustados.
+\textquestiondown Le parece razonable el supuesto de igualdad de varianzas
+para todas las observaciones?
+
+\item Suponga que $Var(Y_{i})=kx_{i}$, defina los pesos adecuados y realice
+una estimaci\'{o}n de la recta por m\'{\i}nimos cuadrados pesados.
+\end{enumerate}
+
+\item El archivo \texttt{aire.txt} contiene tres variables \texttt{ozono},
+\texttt{temp} y \texttt{grupo}, correspondientes a el nivel de ozono y la
+temperatura medidos en 108 d\'{\i}as elegidos al azar en una misma latitud,
+longitud y altitud. La variable \texttt{grupo} es una variable categ\'{o}rica
+que indica nivel de temperatura.
+
+\begin{enumerate}
+\item Suponga que s\'{o}lo dispone de la variable ozono, medida en la forma
+indicada. \textquestiondown Puede asumirse que los datos de ozono corresponden
+a una variable aleatoria con distribuci\'{o}n normal? Para responder a esta
+pregunta haga un qqplot, y un test de normalidad con nivel 0.10. Halle un
+intervalo de confianza de nivel 0.95 para la media poblacional del ozono.
+Justifique la elecci\'{o}n del m\'{e}todo seguido para hallarlo. Estime la
+varianza poblacional del ozono.
+
+\item Sabiendo que las mediciones de ozono se realizaron en 4 tipos de
+d\'{\i}as (clasificados en d\'{\i}as de temperatura baja, media, media alta y
+alta) y que esta categorizaci\'{o}n se encuentra en la variable \texttt{grupo}%
+, realice un ANOVA para ver si la categor\'{\i}a influye en el nivel medio de
+ozono presente en un d\'{\i}a dado. Verifique los supuestos realizados,
+concluya a nivel 0.05. Escriba el modelo ajustado, y d\'{e} un estimador de la
+varianza de los datos. Compare este modelo con el modelo de errores
+independientes del \'{\i}tem anterior.
+
+\item Si ahora uno toma en cuenta, para modelar el comportamiento de la
+variable \texttt{ozono}, que se cuenta con la temperatura medida en el mismo
+momento que fue medida la variable ozono, (guardada en la variable
+\texttt{temp}), proponga y ajuste un modelo de regresi\'{o}n lineal para estas
+dos variables. Escriba el modelo, ajuste los par\'{a}metros, chequee la bondad
+del ajuste. Escriba el modelo ajustado, y d\'{e} un estimador de la varianza
+de los datos. Compare con el modelo anova anterior.
+\end{enumerate}
+\item Como parte de una investigaci\'{o}n se trata de establecer si se puede
+utilizar la concentraci\'{o}n de estrona en saliva para predecir la
+concentraci\'{o}n del esteroide en plasma libre. Se obtuvieron los siguientes
+datos de 14 varones sanos, siendo $X:=$ concentraci\'{o}n de estrona en saliva
+(en pg/ml) e $Y:=$ concentraci\'{o}n de estrona en plasma libre (en pg/ml).%
+\[%
+\begin{tabular}
+[c]{ccccc}%
+$X$ & \multicolumn{1}{|c}{$Y$} &  & $X$ & \multicolumn{1}{|c}{$Y$%
+}\\\cline{1-2}\cline{4-5}%
+7.4 & \multicolumn{1}{|c}{30.0} &  & 14.0 & \multicolumn{1}{|c}{49.0}\\
+7.5 & \multicolumn{1}{|c}{25.0} &  & 14.5 & \multicolumn{1}{|c}{55.0}\\
+8.5 & \multicolumn{1}{|c}{31.5} &  & 16.0 & \multicolumn{1}{|c}{48.5}\\
+9.0 & \multicolumn{1}{|c}{27.5} &  & 17.0 & \multicolumn{1}{|c}{51.0}\\
+9.0 & \multicolumn{1}{|c}{39.5} &  & 18.0 & \multicolumn{1}{|c}{64.5}\\
+11.0 & \multicolumn{1}{|c}{38.0} &  & 20.0 & \multicolumn{1}{|c}{63.0}\\
+13.0 & \multicolumn{1}{|c}{43.0} &  & 23.0 & \multicolumn{1}{|c}{68.0}%
+\end{tabular}
+\]
+
+
+\begin{enumerate}
+	\item Represente estos datos en un diagrama de dispersi\'{o}n.
+	
+	\item \textquestiondown Es razonable suponer que existe una relaci\'{o}n
+	lineal entre $X$ e $Y$ que permita predecir $Y$ en funci\'{o}n de $X$?
+	
+	\item Calcule el coeficiente de determinaci\'{o}n $R^{2}$. Interprete el
+	significado de esta medida en este ejemplo.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}

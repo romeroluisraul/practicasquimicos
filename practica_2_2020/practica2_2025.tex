@@ -1,0 +1,173 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{wrapfig, framed, caption}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{amssymb}
+\usepackage[a4paper, total={7in, 9in}]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{enumitem}
+
+%de proba
+\def\P{{\mathbf P}}
+\def\E{{\mathbf E}}
+\def\cov{{\bf cov}}
+\def\var{{\bf var}}
+
+
+\begin{document}
+
+\centerline{\bf Estadística 1 (Química)}%
+
+\medskip
+
+\centerline{\bf Práctica 2 - Variables aleatorias}%
+
+\begin{enumerate}
+    \item Sea $X$ una variable aleatoria discreta con $P(X = 0) = 0.25$, $P(X = 1) = 0.125$, $P(X = 2) = 0.125$ y $P(X = 3) = 0.5$. Graficar la función de probabilidad puntual y la función de distribución acumulada de $X$.
+    
+    \item La siguiente tabla muestra la función de distribución acumulada de una variable aleatoria discreta $X$:
+    \[
+    F_X(x) = 
+    \begin{cases}
+    0 & \text{si } x < 0 \\
+    0.1 & \text{si } 0 \leq x < 1 \\
+    0.2 & \text{si } 1 \leq x < 2 \\
+    0.7 & \text{si } 2 \leq x < 3 \\
+    0.8 & \text{si } 3 \leq x < 4 \\
+    1 & \text{si } x \geq 4
+    \end{cases}
+    \]
+    \begin{enumerate}
+        \item Indique los valores que puede tomar la variable $X$, es decir calcule su rango. Obtenga su función de probabilidad puntual.
+        \item Calcule $P(X > 3)$.
+        \item Calcule $P(2 < X \leq 4)$.
+        \item Calcule $P(2 \leq X \leq 4)$ y la probabilidad de su complemento.
+    \end{enumerate}
+    
+    \item Un examen de elección múltiple está compuesto de 15 preguntas, cada pregunta con 5 respuestas posibles de las cuales sólo una es correcta. Suponga que uno de los estudiantes que realizan el examen contesta las preguntas al azar.
+    \begin{enumerate}
+        \item ¿Cuál es la probabilidad de que no conteste ninguna correctamente?
+        \item ¿Cuál es la probabilidad de que conteste al menos 3 preguntas correctamente?
+        \item Sea $X$ el número de respuestas correctas de un alumno que contesta al azar. ¿Cómo se llama la distribución de $X$? ¿Cuáles son sus parámetros?
+    \end{enumerate}
+    
+    \item El número de partículas emitidas por una fuente radioactiva, en un día, es una variable aleatoria $X$ con distribución de Poisson. Si la probabilidad de no emitir ninguna partícula en ese período de tiempo es $e^{-1/3}$, calcule la probabilidad de que en un día la fuente emita por lo menos 2 partículas.
+    
+    \item Calcule $E(X)$ y $Var(X)$ siendo $X$
+    \begin{enumerate}
+        \item la variable aleatoria definida en el ejercicio 1.
+        \item la variable aleatoria definida en el ejercicio 2.
+        \item la variable aleatoria definida en el item (c) del ejercicio 3.
+        \item la variable aleatoria definida en el ejercicio 4.
+    \end{enumerate}
+    
+    \item La probabilidad de que el vapor se condense en un tubo de aluminio de cubierta delgada a 10 atm de presión es de 0.4. Se prueban 15 tubos de este tipo bajo las mismas condiciones en forma independiente.
+    \begin{enumerate}
+        \item ¿Cuál es el valor esperado de la cantidad de tubos de este tipo en los que el vapor se condensa?
+        \item Determinar la probabilidad de que:
+        \begin{enumerate}
+            \item el vapor se condense en (exactamente) 4 de los tubos.
+            \item el vapor no se condense en más de 10 tubos.
+        \end{enumerate}
+        \item Si la cantidad de tubos en los cuales el vapor se condensa dista de su valor esperado en menos de 3, se considera que la prueba es aceptable. Un laboratorio realiza diariamente una prueba sobre 15 tubos durante 40 días de manera independiente. Considere la variable aleatoria $Y$ que cuenta la cantidad de días en los cuales la prueba resulta aceptable, ¿qué distribución tiene $Y$? ¿Cuál es el número esperado de días en los cuales la prueba resulta aceptable?
+    \end{enumerate}
+    
+    \item Sea $X$ la cantidad de autos por 5 minutos que pasan por un peaje. Suponga que $X$ sigue una distribución de Poisson con $E(X^2) = 6$.
+    \begin{enumerate}
+        \item Halle la probabilidad de que en 5 minutos pasen 4 autos o más.
+        \item Observamos el número de autos que pasan por el peaje durante 7 períodos consecutivos de 5 minutos, ¿cuál es la probabilidad de que en por lo menos uno de esos períodos pasen 4 autos o más?
+        \item El sistema puede cobrar hasta 3 autos por 5 minutos; de lo contrario (si pasan 4 o más) se levanta la barrera y no se les cobra peaje. Sea $Y$ la cantidad de autos que pagarán peaje en los próximos 5 minutos. Calcule el rango de $Y$. ¿La distribución de $Y$ es Poisson? Calcule la función de probabilidad puntual de $Y$, su esperanza y su varianza.
+        \item Si cada peaje vale 60 pesos, halle el valor esperado y la varianza de lo recaudado en 5 minutos.
+    \end{enumerate}
+    
+    \item Un espectáculo dispone de capacidad para 2000 espectadores, un total de 10 personas decide ir al espectáculo sin haber comprado entradas sabiendo que las entradas están agotadas. De experiencias previas, se sabe que el 1\% de los espectadores que han comprado su entrada no concurren al espectáculo, por lo que se ha implementado una reventa de estas localidades de último minuto. ¿Cuál es la probabilidad de que las 10 personas puedan conseguir su entrada para el espectáculo en la reventa? Sea $X$ la cantidad de personas que no se presentan al espectáculo, ¿qué distribución tiene $X$? Exprese la probabilidad pedida usando la variable $X$. Si puede calcúlela; de lo contrario aproxímela.
+    
+    \item La temperatura para la cual se produce cierta reacción química es una variable aleatoria $X$ con función de densidad dada por:
+    \[
+    f_X(x) = 
+    \begin{cases}
+    c(1 + x^2) & \text{si } -1 \leq x \leq 2 \\
+    0 & \text{en otro caso}
+    \end{cases}
+    \]
+    \begin{enumerate}
+        \item Halle $c$.
+        \item Obtenga la función de distribución acumulada $F_X(x)$.
+        \item Calcule la probabilidad de que la temperatura sea superior a 1.
+        \item Calcule la mediana de $X$.
+        \item Implemente y grafique en R a $F_X(x)$.
+        \item Calcule $E(X)$ y $Var(X)$.
+    \end{enumerate}
+    
+    \item En un laboratorio se producen reacciones químicas, según la variable aleatoria $X$ presentada en el ejercicio anterior, en forma independiente hasta lograr la primera reacción a temperatura superior a 1. ¿Cuál es la probabilidad de que la primer reacción a temperatura superior se produzca en la segunda experiencia? ¿Y la probabilidad de que la primer reacción ocurra en la quinta experiencia?
+    
+    \item Sea $X$ el tiempo de vida (en meses) de un componente electrónico en uso continuo. Supongamos que $X$ sigue una distribución exponencial con parámetro $\lambda = 0.1$.
+    \begin{enumerate}
+        \item Halle la función de distribución acumulada de $X$, su esperanza, su mediana y su varianza.
+        \item Halle la probabilidad de que el tiempo de vida sea mayor que 10 meses.
+        \item Halle la probabilidad de que el tiempo de vida esté entre 5 y 15 meses.
+        \item Halle el 1\% percentil, es decir el valor $t$ tal que la probabilidad de que el tiempo de vida sea menor que $t$ meses sea 0.01.
+        \item Calcule la probabilidad de que el tiempo de vida sea mayor que 25 meses sabiendo que superó los 15 meses. Compare los resultados de (b) y (e).
+    \end{enumerate}
+    
+    \item Sea $X \sim U(0, 40)$.
+    \begin{enumerate}
+        \item Halle la función de distribución acumulada de $X$, su esperanza, su mediana y su varianza.
+        \item Halle la probabilidad de que $X$ sea mayor que 10.
+        \item Calcule la probabilidad de que $X$ sea mayor que 25 sabiendo que $X > 15$. Compare con (b).
+        \item Compare el resultado de este ejercicio con el del ejercicio anterior.
+    \end{enumerate}
+    
+    \textbf{Advertencia:} Es MUY IMPORTANTE saber usar la tabla normal, más allá de los comandos de R que también se pueden utilizar. Una buena práctica es hacer uso de los dos recursos para confirmar la correcta utilización de ellos.
+    
+    \item Sea $X \sim N(16, 25)$. Exprese las siguientes probabilidades en términos de la función $\phi(u) = P(Z \leq u)$, cuando $Z \sim N(0, 1)$. Utilice la tabla normal para calcular probabilidades. Verifique sus resultados utilizando \texttt{pnorm} y \texttt{qnorm} de R.
+    \begin{enumerate}
+        \item calcular:
+        \begin{enumerate}
+            \item $P(X \geq 17)$
+            \item $P(X \leq 14)$
+            \item $P(X < 14)$
+            \item $P(13 < X < 20)$
+            \item $P(10 \leq X < 15)$
+            \item $P(X = 16)$
+        \end{enumerate}
+        \item encontrar un valor $a$ de manera tal que:
+        \begin{enumerate}
+            \item $P(X < a) = 0.5$. Recuerde que $a$ es la mediana o el 50\% percentil de $X$.
+            \item $P(X \geq a) = 0.6$.
+            \item $P(|X - 16| < a) = 0.95$.
+            \item $P\left(\frac{|X-16|}{5} \leq a\right) = 0.95$.
+        \end{enumerate}
+    \end{enumerate}
+    
+    \item El peso esperado o medio de un artículo que proviene de cierta línea de producción es de 83kg.
+    \begin{enumerate}
+        \item El 95\% de los artículos pesan entre 81 y 85kg, calcule el desvío estándar del peso de un artículo elegido al azar de la línea de producción. ¿Qué supuestos deben hacerse para responder a esta pregunta?
+        \item Bajo los supuestos que hizo en (a), si elegimos 6 artículos al azar de la línea de producción, ¿cuál es la probabilidad de que el peso de exactamente 3 artículos diste de su valor esperado a lo sumo en 2 kg?
+    \end{enumerate}
+    
+    \item Se desea determinar una magnitud $\mu$. Para ello se realiza una medición que denotaremos con $X$. El modelo para $X$ es
+    \[
+    X = \mu + \varepsilon
+    \]
+    donde $\mu$ es la verdadera magnitud desconocida y $\varepsilon$ es la variable aleatoria que denota el error de medición. Asumimos que la esperanza de $\varepsilon$ es cero y llamamos $\sigma^2$ a su varianza. Note que observamos a $X$ pero $\varepsilon$ no es observable. El supuesto de que $E(\varepsilon) = 0$ refleja la creencia en que el método de medición empleado es exacto, es decir no produce errores sistemáticos. La varianza del error representa la precisión del método de medición empleado.
+    \begin{enumerate}
+        \item Halle $E(X)$ y $Var(X)$.
+        
+        Asuma que el error de medición tiene una distribución normal con media cero y desviación estándar $\sigma$, es decir $\varepsilon \sim N(0, \sigma^2)$.
+        
+        \item Obtenga la distribución de $X$, su esperanza y su varianza.
+        \item Asuma que la desviación estándar $\sigma = 0.2$. Calcule la probabilidad de que la medición diste de la verdadera magnitud $\mu$ en menos de 0.3 unidades. Note que no fue necesario conocer el valor de $\mu$ para realizar este cálculo.
+        \item Obtenga una expresión, en función de $\sigma$, para la probabilidad de que la medición diste de la verdadera magnitud $\mu$ en menos de 0.3 unidades. Implemente y grafique la función en R· ¿Cómo es el comportamiento de la función?, ¿qué ocurre a medida que $\sigma$ aumenta?, ¿qué se puede decir acerca de la presición del método de medición ($\sigma$) en relación a la probabilidad? % para estudiar su monotonía. Interprete este comportamiento.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

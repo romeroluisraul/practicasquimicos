@@ -1,0 +1,282 @@
+\documentclass[11pt,a4paper,twoside]{article}%
+
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{fancyhdr}
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Thursday, December 26, 2013 11:29:10}
+%TCIDATA{LastRevised=Friday, December 27, 2013 13:58:43}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\topmargin -0.7in
+\oddsidemargin -0.30in
+\evensidemargin -0.7in
+\textwidth 7.3in
+\textheight 9.5in
+
+
+%\pagestyle{fancy}
+%\fancyhf{}
+
+%\lhead{\small{Estad\'istica (Qu\'imica) - Primer Cuatrimestre 2020 - Pr\'actica 1}}
+%\rhead{\small{P\'agina \thepage}}
+
+
+\begin{document}
+
+\thispagestyle{plain}
+
+\begin{center}
+\textbf{\textsf{Estad\'{\i}stica (Qu\'{\i}mica) }}\\
+\vspace{0.2cm}
+\textbf{Pr\'{a}ctica 1 - Probabilidad\vspace{-0.1in}}
+\end{center}
+
+\begin{enumerate}
+\item Se arroja 3 veces una moneda equilibrada y se observa la secuencia de
+caras y cecas.\vspace{-0.2cm}
+
+\begin{enumerate}
+\item Describa el espacio muestral. \textquestiondown Es equiprobable? Asigne probabilidad a cada uno de los  posibles resultados.
+
+\item Calcule las probabilidades de los siguientes sucesos:\vspace{-0.1cm}
+
+\begin{enumerate}
+\item A : salieron al menos dos caras
+
+\item B : en los dos primeros tiros salieron caras
+
+\item C : en el \'{u}ltimo tiro sali\'{o} ceca
+
+\item no ocurri\'{o} el suceso A
+
+\item ocurrieron los sucesos A y B simult\'{a}neamente
+
+\item ocurri\'{o} alguno de los dos sucesos A \'{o} B.
+\end{enumerate}
+\end{enumerate}
+
+
+\item Se lanzan dos dados equilibrados de 6 caras y se anotan los n\'umeros de las caras observadas.
+\begin{enumerate}
+\item Describa un espacio muestral de este experimento que sea equiprobable.
+\item Calcule la probabilidad de que se anoten los n\'umeros 2 y 5.
+\item Calcule la probabilidad de que se hayan observado dos 1.
+\item Calcule la probabilidad de que la suma de los n\'umeros observados sea 6.
+\end{enumerate}
+
+
+\item \label{bolitas} Una caja contiene 3 bolitas rojas, 2 azules y 4 blancas. Se extraen 2
+bolitas \textbf{con reposici\'{o}n}. Calcule la probabilidad de
+obtener:\vspace{-0.1cm}
+
+\begin{enumerate}
+\item las dos bolitas del mismo color.
+\item al menos una bolita roja.
+\item una bolita azul y una roja.
+\item una bolita azul o una roja.
+\end{enumerate}
+
+\item Se arroja un dado seis veces. \textquestiondown Cu\'{a}l de las
+siguientes opciones ofrece la mejor manera de ganar? \textquestiondown O son
+equivalentes?\vspace{-0.15cm}
+
+\begin{enumerate}
+\item Ganar \$1 si sale al menos un as.
+
+\item Ganar \$1 si sale un as todas las veces.
+
+\item Ganar \$1 si sale la secuencia 1, 2, 3, 4, 5, 6 (en ese orden).
+
+\item Ganar \$1 si los dos primeros n\'{u}meros que salen son iguales.
+\end{enumerate}
+
+
+\item Rehaga el ejercicio \ref{bolitas} pero con las extracciones realizadas \textbf{sin
+reposici\'{o}n}.
+
+
+\item \textquestiondown Cu\'antos invitados necesit\'as en una fiesta para que al menos dos cumplan a\~nos el mismo d\'ia? \textquestiondown Cu\'antos para que al menos dos cumplan a\~nos el mismo d\'ia con probabilidad mayor o igual a 0,5? \textquestiondown Y mayor o igual a 0,95?\footnote{Cliqueando \hyperlink{https://www.lanacion.com.ar/sociedad/desafio-que-es-paradoja-del-cumpleanos-nid2340525}{ac\'a} encontrar\'as una nota publicada en un diario sobre este problema.} Asuma que un a\~no tiene 365 d\'ias e implemente, en R, una funci\'on que tenga como entrada la cantidad de invitados y devuelva, \verb|cumple(invitados)|, la probabilidad de que al menos dos cumplan a\~nos el mismo d\'ia. Grafique en el eje $x$ el n\'umero de invitados y en el eje $y$ la probabilidad calculada para cada n\'umero de invitados.
+
+
+\item Se realiza una experiencia que consiste en provocar una reacci\'{o}n y
+luego  se registra  (i) el nivel (bajo, medio, alto) de presi\'{o}n al finalizar la
+reacci\'{o}n y (ii) si la reacci\'{o}n se completa antes de
+los 10 minutos o pasados los 10 minutos. Las probabilidades que dicha
+reacci\'{o}n se complete antes de los 10 minutos y con distintos niveles de
+presi\'{o}n en un d\'{\i}a cualquiera son conocidas y se muestran en la primer fila de 
+siguiente tabla.\vspace{-0.1cm}%
+\[%
+\begin{tabular}
+[c]{cc|c|c|c|}\cline{3-5}
+&  & \multicolumn{3}{|c|}{Niveles de presi\'{o}n}\\\cline{3-5}
+&  & bajo & medio & alto\\\hline
+\multicolumn{1}{|c|}{Tiempo } & \multicolumn{1}{|c|}{%
+	%TCIMACRO{\TEXTsymbol{<} }%
+	%BeginExpansion
+	$<$
+	%EndExpansion
+	10 minutos} & $0.05$ & $0.15$ & $0.40$\\\cline{2-5}%
+\multicolumn{1}{|c|}{de reacci\'{o}n} & \multicolumn{1}{|c|}{$\geq$ 10
+	minutos} & $0.10$ &  & $0.20$\\\hline
+\end{tabular}
+\]
+
+
+\begin{enumerate}
+	\item Complete el cuadro. \textquestiondown Cu\'{a}l es la probabilidad de que
+	la reacci\'{o}n se complete antes de los 10 minutos y con un nivel de
+	presi\'{o}n alto?
+	
+	
+	\item \textquestiondown Cu\'{a}l es la probabilidad de que la reacci\'{o}n no
+	se produzca a nivel de presi\'{o}n alto y se produzca antes de los diez minutos?
+	
+	\item \textquestiondown Cu\'{a}l es la probabilidad de que el tiempo de
+	reacci\'{o}n sea menor a los 10 minutos?
+	
+
+	\item \textquestiondown A qu\'{e} nivel de presi\'{o}n es m\'{a}s probable que
+	se produzca la reacci\'{o}n?
+	
+%	\item \textquestiondown Son m\'{a}s probables las reacciones que se producen
+%	antes de los 10 minutos?
+%	
+\end{enumerate}
+
+%\newpage
+
+\item Consideremos nuevamente las condiciones del ejercicio anterior.
+\begin{enumerate} 
+	\item Sabiendo que  una reacci\'{o}n
+se produjo antes de los 10 minutos,
+\textquestiondown cu\'{a}l es la probabilidad de que  haya sido a nivel de presi\'{o}n media?
+
+
+	\item Sabiendo que el nivel de presi\'{o}n fue alto,
+	\textquestiondown cu\'{a}l es la probabilidad de que la reacci\'{o}n haya
+	tenido lugar antes de los 10 minutos?
+	\item Considere los siguientes sucesos\vspace{-0.1cm}
+	\begin{align*}
+	A  & :\text{el tiempo de reacci\'{o}n fue menor a 10 minutos}\\
+	B  & :\text{el nivel de presi\'{o}n fue bajo}%
+	\end{align*}
+	Calcule $P(A),P(B),P(A\mid B),P(B\mid A)$, $P\left(  B^c \mid A\right)
+	,P(B\mid A^{c})$ y $P(A\cap B)$.
+	
+	\item \textquestiondown Es el nivel de presi\'{o}n independiente del tiempo de
+	reacci\'{o}n? Justifique su respuesta.
+	
+\end{enumerate}
+
+
+
+
+\item Se realiza el mismo experimento del ejercicio anterior pero se registra apenas el nivel de presi\'on de la reacci\'{o}n. Recordemos que la probabilidad de cada uno de los niveles de
+presi\'{o}n al completarse la reacci\'{o}n son:\vspace{-0.1cm}%
+\[
+P(\text{bajo})=0.15\qquad P(\text{medio})=0.25\qquad P(\text{alto})=0.60
+\]
+Se repite la experiencia en 2 d\'{\i}as sucesivos en condiciones
+independientes e id\'{e}nticas.\vspace{-0.2cm}
+
+\begin{enumerate}
+	\item Describa el espacio muestral asociado a este experimento y calcule la probabilidad de cada uno de los posibles resultados.
+	
+	\item Calcule  la probabilidad de cada uno de los siguientes eventos:
+	
+	\begin{enumerate}
+		\item  la reacci\'{o}n se completa con un nivel de presi\'{o}n bajo el primer d\'{\i}a.
+		
+		\item  la reacci\'{o}n se completa con un nivel de presi\'{o}n bajo en los dos d\'{\i}as.
+		
+		\item  la reacci\'{o}n se completa por lo menos en un d\'{\i}a con un nivel de presi\'{o}n bajo.
+		
+		\item  la reacci\'{o}n se completa a lo sumo un d\'{\i}a con nivel de presi\'{o}n alto.
+	\end{enumerate}
+	
+%	\item Suponga ahora que \'{u}nicamente interesa si el nivel de presi\'{o}n es
+%	bajo o si no es bajo. Rehaga los \'{\i}tems a) y b) i) ii) iii).
+\end{enumerate}
+
+
+\item Rehaga el ejercicio 1 suponiendo que la moneda est\'{a} cargada de
+manera tal que la probabilidad de obtener cara es 3/4. %independencia
+
+\item En una materia que se dict\'{o} el primer cuatrimestre del a\~{n}o
+pasado, la distribuci\'{o}n de la frecuencia de notas obtenidas fue la
+siguiente:\vspace{-0.1cm}%
+\[%
+\begin{tabular}
+[c]{c|c}%
+Nota & Porcentaje\\\hline
+0 y 1 & 5\%\\
+2 y 3 & 15\%\\
+4 a 7 & 50\%\\
+8 a 10 & 30\%
+\end{tabular}
+\]
+\vspace{-0.2cm}
+
+La materia se aprueba con una nota mayor o igual a 4.
+
+\begin{enumerate}
+\item \vspace{-0.1cm}Se elige un estudiante al azar. Hallar la probabilidad de
+que haya aprobado.
+
+\item Sabiendo que hubo 200 alumnos en el curso, si se eligen sin
+reposici\'on dos estudiantes al azar, \textquestiondown cu\'{a}l es la probabilidad de que ambos
+hayan aprobado? \textquestiondown Cu\'{a}l es la probabilidad de que al menos
+uno haya aprobado?
+
+\item Responder b) si a los estudiantes se los elige con reposici\'on. Compare las probabilidades halladas en este \'item con las del b), \textquestiondown son muy diferentes entre s\'{\i}?
+
+\item Felipe curs\'{o} dicha materia el cuatrimestre pasado y la aprob\'{o}.
+\textquestiondown Cu\'{a}l es la probabilidad de que haya sacado m\'{a}s de 7?
+
+\end{enumerate}
+
+\item Una caja contiene tres monedas: una de ellas es de curso legal (equilibrada), otra tiene dos caras y la restante est\'a cargada de modo que la probabilidad de obtener cara es $\frac{1}{5}$. Se selecciona una moneda al azar y se lanza.
+\begin{enumerate}
+\item Hallar la probabilidad de que salga cara.
+\item Sabiendo que sali\'o cara, hallar la probabilidad de que se haya extra\'ido la moneda que hace m\'as probable que salga ceca.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+

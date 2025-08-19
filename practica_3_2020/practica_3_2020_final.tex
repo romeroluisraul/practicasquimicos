@@ -1,0 +1,433 @@
+\documentclass[11pt,a4paper,twoside]{article}%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{color}
+
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Thursday, December 26, 2013 11:29:10}
+%TCIDATA{LastRevised=Friday, March 28, 2014 13:58:37}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\topmargin -0.5in
+\oddsidemargin -0.1in
+\evensidemargin -0.1in
+\textwidth 6.5in
+\textheight 9.5in
+\begin{document}
+
+\begin{center}
+\textbf{\textsf{Estad\'{\i}stica (Qu\'{\i}mica) - Primer Cuatrimestre- 2020 - Coronavirus}}\\
+\vspace{0.2cm}
+\textbf{Pr\'{a}ctica 3 - Sumas de variables aleatorias\vspace{-0.1in}}
+\end{center}
+
+\begin{enumerate}
+\item Se realizan mediciones independientes del volumen inicial $\left(
+X\right)  $ y final $\left(  Y\right)  $ en una bureta. Supongamos que las
+mediciones inicial y final siguen el modelo de errores independientes, es
+decir,
+\[
+X=\alpha+\varepsilon_{X},\qquad Y=\beta+\varepsilon_{Y}%
+\]
+donde $\alpha$ y $\beta$ son los vol\'{u}menes desconocidos, $\varepsilon_{X}$
+y $\varepsilon_{Y}$, los errores de medici\'{o}n, son variables aleatorias
+independientes con media 0 y varianza $\sigma^{2}$. Sea $Z=Y-X$.
+
+\begin{enumerate}
+\item Hallar $\mathbb{E}(Z)$ y $\mathbb{V}(Z)$.
+
+\item En una titulaci\'{o}n, la lectura inicial en una bureta es de 3.51ml y
+la lectura final es de 15.67ml. Para ambas mediciones se sabe que el error de
+medici\'{o}n tiene una desviaci\'{o}n est\'{a}ndar de 0.02ml.
+
+\begin{enumerate}
+\item Calcular el valor estimado del volumen utilizado.
+
+\item \textquestiondown Cu\'{a}l es la desviaci\'{o}n est\'{a}ndar de su error
+de medici\'{o}n?
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+\item \label{medidas repetidas} Modelo para medici\'on  con error aditivo.  Se 
+desea determinar una magnitud $\mu.$ Para ello se realizar\'an $n$ medidas 
+repetidas, es decir, se realizar\'{a}n $n$ mediciones de la misma magnitud en 
+id\'{e}nticas condiciones, que denotaremos con $X_{1},\dots,X_{n}$. Asumimos 
+el siguiente modelo para las variables aleatorias $X_{i}$
+\[
+X_{i}=\mu+\varepsilon_{i}
+\]
+donde $\mu$ es la verdadera magnitud desconocida, y $\varepsilon_{i}$ es la
+variable aleatoria que denota el error de la i\'{e}sima medici\'{o}n. Asumimos
+que $\varepsilon_{1},\dots,\varepsilon_{n}$ son variables aleatorias
+independientes e id\'{e}nticamente distribuidas (v.a.i.i.d.) con esperanza
+cero y varianza $\sigma^{2}=0.25$. Notar que los errores son no observables. El
+supuesto de que $\mathbb{E}(\varepsilon_{i})=0$ refleja la creencia en que el
+m\'{e}todo de medici\'{o}n empleado es exacto. Es decir que no produce errores
+sistem\'{a}ticos. La varianza del error, 
+$\sigma^{2}=\mathbb{V}(\varepsilon_{i})$
+representa la precisi\'{o}n del m\'{e}todo de medici\'{o}n empleado. Sea
+\[
+\overline{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}
+\]
+el promedio (o media muestral) de las $n$ observaciones. 
+
+
+Asumir ahora que el error de medici\'on tiene una distribuci\'on normal con media cero. Este modelo
+probabil\'istico se conoce como el Modelo de Gauss sin sesgo. Asumir tambi\'en que el error de medici\'{o}n tiene desv\'io est\'andar $\sigma=0.5$, o sea que $\varepsilon_{i}\sim\mathcal{N}(0;0.25)$.
+\begin{enumerate}
+	\item  Obtener la distribuci\'{o}n de $\overline{X}_{n}$, su esperanza y
+	su varianza.
+	
+	\item Calcular la probabilidad de que el promedio de $n=10$ mediciones y
+	de $n=100$ mediciones diste de la verdadera magnitud $\mu$ en menos de 0.1
+	unidades. Notar que no fue necesario conocer el valor de $\mu$ para realizar
+	este c\'{a}lculo. 
+	
+	\item Obtener una expresi\'{o}n para la probabilidad de que el promedio de 
+$n$ mediciones diste de la verdadera magnitud $\mu$ en menos de $0.1$ 
+unidades en funci\'{o}n de $n$. Estudiar la  monoton\'{\i}a y el l\'{\i}mite 
+cuando $n$ tiende a infinito de esta probabilidad.
+	
+	\item  Determinar cu\'an grande debe ser $n$ para que $P\left(  |\overline
+	{X}_{n}-\mu|<0.1\right)  \geq0.99$. 
+	
+	
+{\color{red}\item Para incluir en el futuro, en alguna parte de esta practica. Calcular la siguiente probabilidad
+$$\mathbb P\left(\overline X_n-\frac{1.96*\sqrt{0.25}}{\sqrt{n}} <\mu <\overline X_n+\frac{1.96*\sqrt{0.25}}{\sqrt{n}}\right)$$}	
+\end{enumerate}
+
+\item \label{medidas repetidas_bis} Considerar nuevamente el modelo de 
+mediciones propuesto en el ejercicio anterior, suponiendo ahora que 
+$\varepsilon_i$  tiene una distribuci\'{o}n \textbf{desconocida}, pero se sabe 
+que 
+$$E(\varepsilon_i)=0\;, \quad V(\varepsilon_i)=0.25$$
+
+
+\begin{enumerate}
+	\item Hallar $\mathbb{E}(\overline{X}_{n})$ y 
+$\mathbb{V}(\overline{X}_{n})$.
+	
+	\item Para $n=10$ y $n=100$ mediciones, usando la desigualdad de Chebyshev,
+	encontrar una cota inferior para
+	\[
+	P\left(  |\overline{X}_{n}-\mu|<0.1\right)  .
+	\]
+	Comparar el resultado obtenido con el hallado en el \'{\i}tem (b) del 
+ejercicio anterior.
+	
+	\item Determinar cu\'an grande debe ser $n$ para que $P\left(  |\overline{X}%
+	_{n}-\mu|<0.1\right)  \geq0.99$, usando nuevamente la desigualdad de Chebyshev.
+		Comparar el resultado obtenido con el valor hallado en el \'{\i}tem 
+(d) del ejercicio anterior.
+	
+\end{enumerate}
+
+
+\item Se desea conocer la proporci\'{o}n de personas que est\'{a}n a favor de
+la despenalizaci\'{o}n del aborto en una ciudad. Sea $p$ la proporci\'{o}n
+poblacional que est\'{a} a favor de la despenalizaci\'{o}n. Observar que $p$ es
+un n\'{u}mero fijo y desconocido. Para estimar a $p$ se eligen $n$ personas al
+azar y se les pregunta a cada una de ellas su opini\'{o}n. Para $i$ entre $1$
+y $n$, sean%
+\[
+X_{i}=\left\{
+\begin{array}
+[c]{lll}%
+1 &  & \text{si la i\'{e}sima persona encuestada est\'{a} a favor de la
+despenalizaci\'{o}n}\\
+&  & \\
+0 &  & \text{en otro caso.}%
+\end{array}
+\right.
+\]
+Asumimos que las $X_{i}$ son v.a.i.i.d.
+
+\begin{enumerate}
+\item Expresar la proporci\'{o}n muestral de encuestados a favor de la
+despenalizaci\'{o}n en t\'{e}rminos de las variables $X_{i}.$
+
+\item Proponer un estimador para $p$ a partir de las variables $X_{i}.$
+Observar que el estimador es una variable aleatoria.
+
+\item Hallar una cota superior para la probabilidad de que el estimador y el
+verdadero par\'{a}metro $p$ difieran en m\'{a}s de 0.1, que no dependa de
+valores desconocidos. Es decir, acotar superiormente la siguiente
+expresi\'{o}n,
+\[
+P\left(  \left\vert \overline{X}_{n}-p\right\vert >0.1\right)
+\]
+de modo que la cota s\'{o}lo dependa de $n$. \textquestiondown Qu\'{e} pasa
+con esta probabilidad cuando $n$ aumenta? \textquestiondown C\'{o}mo puede el
+encuestador mejorar su estimaci\'{o}n de $p$?
+\end{enumerate}
+%
+%\item \label{medidas repetidas}Se desea determinar una magnitud $\mu.$ Para
+%ello se realizan $n$ medidas repetidas, es decir, se realizar\'{a}n $n$
+%mediciones de la misma magnitud en id\'{e}nticas condiciones, que denotaremos
+%con $X_{1},...,X_{n}$. Asumimos el siguiente modelo para las variables
+%aleatorias $X_{i}$%
+%\[
+%X_{i}=\mu+\varepsilon_{i}%
+%\]
+%donde $\mu$ es la verdadera magnitud desconocida, y $\varepsilon_{i}$ es la
+%variable aleatoria que denota el error de la i\'{e}sima medici\'{o}n. Asumimos
+%que $\varepsilon_{1},...,\varepsilon_{n}$ son variables aleatorias
+%independientes e id\'{e}nticamente distribuidas (v.a.i.i.d.) con esperanza
+%cero y varianza $\sigma^{2}=0.25$. Note que los errores son no observables. El
+%supuesto de que $E(\varepsilon_{i})=0$ refleja la creencia en que el
+%m\'{e}todo de medici\'{o}n empleado es exacto. Es decir no produce errores
+%sistem\'{a}ticos. La varianza del error, $\sigma^{2}=Var(\varepsilon_{i})$
+%representa la precisi\'{o}n del m\'{e}todo de medici\'{o}n empleado. Sea
+%\[
+%\overline{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}%
+%\]
+%el promedio (o media muestral) de las $n$ observaciones.
+%
+%\begin{enumerate}
+%\item Halle $E(\overline{X}_{n})$ y $Var(\overline{X}_{n})$.
+%
+%\item Para $n=10$ y $n=100$ mediciones, usando la desigualdad de Chebyshev,
+%encuentre una cota inferior para
+%\[
+%P\left(  |\overline{X}_{n}-\mu|<0.1\right)  .
+%\]
+%
+%
+%\item Determine cuan grande debe ser $n$ para que $P\left(  |\overline{X}%
+%_{n}-\mu|<0.1\right)  \geq0.99$, usando nuevamente la desigualdad de Chebyshev.
+%\end{enumerate}
+%
+%Asuma ahora que el error de medici\'{o}n tiene una distribuci\'{o}n normal con
+%media cero. Este modelo probabil\'{\i}stico se conoce como el Modelo de Gauss
+%sin sesgo. Asuma tambi\'{e}n que la desviaci\'{o}n est\'{a}ndar es $0.5$, es
+%decir $\varepsilon_{i}\sim\mathcal{N}(0,0.25)$.
+%
+%\begin{enumerate}
+%\item[(d)] Obtenga la distribuci\'{o}n de $\overline{X}_{n}$, su esperanza y
+%su varianza.
+%
+%\item[(e)] Calcule la probabilidad de que el promedio de $n=10$ mediciones y
+%de $n=100$ mediciones diste de la verdadera magnitud $\mu$ en menos de 0.1
+%unidades. Note que no fue necesario conocer el valor de $\mu$ para realizar
+%este c\'{a}lculo. Compare los resultados obtenido con los valores hallados en
+%el \'{\i}tem b).
+%
+%\item[(f)] Obtenga una expresi\'{o}n para la probabilidad de que la
+%medici\'{o}n diste de la verdadera magnitud $\mu$ en menos de $0.1$ unidades
+%en funci\'{o}n de $n$. Estudie su monoton\'{\i}a y el l\'{\i}mite cuando $n$
+%tiende a infinito de esta probabilidad.
+%
+%\item[(g)] Determine cuan grande debe ser $n$ para que $P\left(  |\overline
+%{X}_{n}-\mu|<0.1\right)  \geq0.99$. Compare el resultado obtenido con el valor
+%hallado en el \'{\i}tem c).
+%\end{enumerate}
+
+\item Considerar nuevamente el modelo propuesto en el ejercicio
+\ref{medidas repetidas}, asumiendo ahora que los errores se 
+distribuyen de manera uniforme: $\varepsilon_{i}\sim
+\mathcal{U}(-\sqrt{3}/2,\sqrt{3}/2)$. Calcular de forma aproximada la
+probabilidad $P\left(  |\overline{X}_{n}-\mu|<0.1\right)  $, para $n=100$ y
+determinar cu\'an grande debe ser $n$ para que $P\left(  |\overline{X}_{n}%
+-\mu|<0.1\right)  \geq0.99$. Comparar con los resultados obtenidos en  el 
+ejercicio \ref{medidas repetidas} y en el ejercicio \ref{medidas repetidas_bis}. 
+\textquestiondown Qu\'e observa?
+
+%\item La figura siguiente muestra
+%\[%
+%%TCIMACRO{\FRAME{itbpFX}{15.6531cm}{8.1693cm}{0cm}{}{}%
+%%{graficobinomialpracticacontinuas.jpg}{\special{ language "Scientific Word";
+%%type "GRAPHIC";  maintain-aspect-ratio TRUE;  display "USEDEF";
+%%valid_file "F";  width 15.6531cm;  height 8.1693cm;  depth 0cm;
+%%original-width 7.6666in;  original-height 3.9894in;  cropleft "0";
+%%croptop "0.9989";  cropright "1.0003";  cropbottom "0";
+%%filename 'graficobinomialpracticacontinuas.JPG';file-properties "XNPEU";}}}%
+%%BeginExpansion
+%\raisebox{-0cm}{\fbox{\includegraphics[
+%trim=0.000000in 0.000000in -0.002300in 0.004388in,
+%natheight=3.989400in,
+%natwidth=7.666600in,
+%height=8.1693cm,
+%width=15.6531cm
+%]%
+%{graficobinomialpracticacontinuas.jpg}%
+%}}%
+%%EndExpansion
+%\]
+%la funci\'{o}n de probabilidad puntual en $k$ graficada sobre el intervalo de
+%longitud uno centrado en $k,$ para todos los enteros $k$ entre 0 y 100, junto
+%con una curva normal $\mathcal{N}(\mu,\sigma^{2}).$ La funci\'{o}n reci\'{e}n
+%descripta est\'{a} definida por
+%\[
+%g\left(  x\right)  =\left\{
+%\begin{array}
+%[c]{lll}%
+%p_{X}\left(  k\right)  &  & \text{si }k-\frac{1}{2}\leq x<k+\frac{1}{2},\text{
+%para }k\text{ entero entre 0 y 100}\\
+%&  & \\
+%0 &  & \text{en otro caso}%
+%\end{array}
+%\right.
+%\]
+%donde $X\sim Bi\left(  100,0.5\right)  .$\allowbreak
+%
+%\begin{enumerate}
+%\item \textquestiondown Cu\'{a}les son los valores de $\mu$ y $\sigma^{2}$ que
+%corresponden a la curva normal dibujada?
+%
+%\item La probabilidad de obtener 52 caras en 100 tiradas de una moneda
+%equilibrada, \textquestiondown es exactamente igual al \'{a}rea entre $51.5$ y
+%$52.5$ bajo la curva normal o al \'{a}rea bajo el gr\'{a}fico de $g$?
+%\textquestiondown Son muy distintas entre s\'{\i}? \textquestiondown Qu\'{e}
+%resultado te\'{o}rico est\'{a} usando?
+%
+%\item La probabilidad de obtener 52 caras o m\'{a}s en 100 tiradas de una
+%moneda equilibrada puede ser aproximada por \textquestiondown cu\'{a}l zona
+%del gr\'{a}fico? Calc\'{u}lela.
+%\end{enumerate}
+
+\item Se tira 100 veces un dado de 6 caras. Usar la aproximaci\'{o}n normal
+para hallar la probabilidad de que:
+
+\begin{enumerate}
+\item salga \textquotedblleft6\textquotedblright\ entre 15 y 20 veces, inclusive.
+
+\item la suma de los resultados obtenidos sea menor que 300.
+
+\item el n\'{u}mero de veces que el resultado sea par est\'{e} entre 40 y 60
+veces, inclusive.
+
+\item el n\'{u}mero de veces que el resultado sea par sea mayor o igual que el
+n\'{u}mero de veces que el resultado sea impar.
+\end{enumerate}
+
+\item Un negocio de mascotas ofrece el siguiente servicio para sus clientes
+que toman vacaciones. El servicio consiste en alquilarle al due\~{n}o de la
+mascota un dispenser autom\'{a}tico de raciones diarias de alimento
+balanceado. Cuando el animal termina de comer una raci\'{o}n,
+autom\'{a}ticamente, el dispenser pone a su disposici\'{o}n la raci\'{o}n
+siguiente. El tiempo (en d\'{\i}as) que el gato de Felipe demora en comer una
+raci\'{o}n de alimento es una variable aleatoria Exponencial con par\'{a}metro
+$\lambda=2$. Se puede suponer que los tiempos que tarda en comer cada
+raci\'{o}n son independientes entre s\'{\i}.
+
+\begin{enumerate}
+\item Felipe se va 30 d\'{\i}as de vacaciones y contrata este servicio con 62
+raciones. Si el gato no tiene comida disponible se escapa de la casa.
+\textquestiondown Cu\'{a}l es, aproximadamente, la probabilidad de que Felipe
+encuentre al gato en su hogar al volver de las vacaciones?
+
+\item \textquestiondown Cu\'{a}ntas raciones tiene que comprar si quiere
+encontrar al gato en su casa al volver de las vacaciones con una probabilidad aproximada
+mayor o igual que $0.99$?
+\end{enumerate}
+
+%\item Comparar lo obtenido en el ejercicio anterior con los resultados que se obtienen sin aproximar utilizando R. \textquestiondown Es buena la aproximaci\'on?
+
+\item Para rellenar una zona del r\'{\i}o se utilizan 2 camiones (A y B). La
+distribuci\'{o}n de la carga diaria (en toneladas m\'{e}tricas) transportada
+por el cami\'{o}n A tiene funci\'{o}n de densidad
+\[
+f\left(  x\right)  =\left\{
+\begin{array}
+[c]{lll}%
+\frac{x}{52} &  & \text{si }11<x<15,\\
+&  & \\
+0 &  & \text{en otro caso}%
+\end{array}
+\right.
+\]
+El cami\'{o}n B lleva una carga diaria en toneladas con esperanza $18$ Tm y
+desv\'{\i}o est\'{a}ndar $1.3$ Tm.
+
+\begin{enumerate}
+\item Calcular esperanza y varianza de la carga diaria transportada por A.
+
+\item Calcular esperanza y desv\'{\i}o est\'{a}ndar de la carga total llevada
+por los dos camiones en un d\'{\i}a, asumiendo que las cargas transportadas
+por ambos camiones son independientes.
+
+\item Calcular \textbf{aproximadamente} la probabilidad de que la carga total
+transportada en 256 d\'{\i}as est\'{e} entre 7950 y 8000 Tm.  Asuma que las
+cargas transportadas en d\'{\i}as distintos son independientes.
+
+\item \textquestiondown Puede calcular la probabilidad pedida en c)
+\textbf{exactamente}?
+\end{enumerate}
+
+\item Supongamos que el peso (en gramos) de un frasco de mermelada sigue una
+distribuci\'{o}n normal con un peso medio de $\mu_{A}$ para la marca A y
+$\mu_{B}$ para la marca B, y con desv\'{\i}os $\sigma_{A}=8g$ y $\sigma
+_{B}=6g$, respectivamente. Se eligen al azar $n_{A}=40$ frascos de la marca A
+y $n_{B}=35$ frascos de la marca B, y se pesan sus contenidos.
+
+\begin{enumerate}
+\item Defina las variables aleatorias involucradas en este problema. Indique
+la distribuci\'{o}n exacta o aproximada de las medias muestrales asociadas a
+ambas marcas. Indique la distribuci\'{o}n exacta o aproximada de la diferencia
+entre la media muestral para la marca A y la media muestral para la marca B.
+Enuncie los resultados te\'{o}ricos en los que se basa. Observe que no es
+necesario conocer los valores de $\mu_{A}$\ y $\mu_{B}$\ sino s\'{o}lo de la
+diferencia para poder determinar la distribuci\'{o}n de $\overline{X}_{n_{A}%
+}-\overline{Y}_{n_{B}}.$
+
+\item Asumamos que los pesos medios o esperados de ambas marcas son iguales.
+Calcular la probabilidad de que la distancia entre las medias muestrales sea a
+lo sumo 3.
+
+\item Calcular la probabilidad de que la distancia anterior sea por lo menos 5,
+asumiendo que los pesos medios de ambas marcas son iguales.
+
+\item No se conocen los valores de $\mu_{A}$\ y $\mu_{B}$, s\'{o}lo se sabe
+que el valor observado de la diferencia entre la \textbf{media muestral} para
+la marca A y la \textbf{media muestral} para la marca B es 5,
+\textquestiondown ser\'{\i}a razonable inferir que $\mu_{A}-\mu_{B}=0$? Para
+contestar calcule, asumiendo que $\mu_{A}-\mu_{B}=0$, la probabilidad de que
+la distancia entre las medias muestrales sea 5 \'{o} m\'{a}s. Si esta
+probabilidad fuera \textquotedblleft muy peque\~{n}a\textquotedblright\ uno
+tender\'{\i}a a dudar de que la diferencia entre las medias poblacionales es 0.
+
+\item \textquestiondown Se modifican las distribuciones de a) si $n_{A}=400$ y
+$n_{B}=350$? Justificar.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

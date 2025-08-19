@@ -1,0 +1,400 @@
+\documentclass[11pt,a4paper,twoside]{article}%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{Created=Thursday, December 26, 2013 11:29:10}
+%TCIDATA{LastRevised=Friday, March 28, 2014 14:10:35}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\topmargin -0.7in
+\oddsidemargin -0.30in
+\evensidemargin -0.7in
+\textwidth 7.3in
+\textheight 9.5in
+\hyphenation{pro-ce-di-mien-to}
+\begin{document}
+
+\begin{center}
+\textbf{\textsf{Estad\'{\i}stica (Qu\'{\i}mica) - Primer Cuatrimestre 2020 - Coronavirus}}
+
+\textbf{Pr\'{a}ctica 6 - Tests de Hip\'{o}tesis}
+\end{center}
+
+Comentario: En todos los ejercicios propuestos
+
+\begin{enumerate}
+\item[a)] defina las variables aleatorias y los par\'{a}metros involucrados.
+
+\item[b)] de ser posible indique:
+
+\begin{enumerate}
+\item[i.] la distribuci\'{o}n de las variables aleatorias
+
+\item[ii.] el significado intuitivo de los par\'{a}metros.
+
+\item plantee las hip\'{o}tesis nula y alternativa, e indique el nivel que
+usar\'{a} para el test.
+
+\item elija un test, calcule el valor del estad\'{\i}stico, calcule o acote el
+$p-$valor e indique la conclusi\'{o}n del test. Si el nivel del test no se
+especifica en el enunciado, tome por default $0.05$.
+
+\item compare los resultados de hacer las cuentas a mano con las salidas
+obtenidas con el R, de manera de chequear las primeras y aprender a usar las
+segundas, en aquellos ejercicios en los que ambas cosas sean posibles.
+\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+%\item Una colonia de ratones de laboratorio tiene varios cientos de animales.
+%El peso en gramos de los ratones adultos sigue una distribuci\'{o}n normal con
+%media igual a 30g. y desv\'{\i}o est\'{a}ndar de 5g. Como parte de un
+%experimento, se les pidi\'{o} a algunos estudiantes que eligieran 25 ratones
+%adultos, sin ninguna premisa. El peso promedio de estos 25 animales fue de
+%33g. \textquestiondown Muestran estos datos evidencia suficiente a un nivel
+%del 5\% para decir que seleccionar los animales de esta manera no es lo mismo
+%que elegirlos al azar? Justifique.
+
+\item Una colonia de ratones de laboratorio tiene varios cientos de ratones de una determinada especie. El peso en gramos de los ratones de esta especie sigue una distribuci\'on normal con desv\'io est\'andar de 5g. Se eligieron al azar 25 ratones de dicha colonia. El peso promedio de estos 25 animales fue de 27g.
+\begin{enumerate}
+\item \textquestiondown Muestran estos datos evidencia suficiente a un nivel del 5\% para decir que el peso medio de todos los ratones de la colonia es menor a 30g? Justifique planteando un test adecuado.
+\item Calcule el p-valor del test planteado en (a).
+\item Sin hacer m\'as cuentas, \textquestiondown puede decir cu\'al ser\'ia la conclusi\'on del test anterior pero a nivel 1\%?
+\end{enumerate}
+
+\item Supongamos que la proporci\'{o}n de mon\'{o}xido de carbono (CO) de un
+gas es de 70 ppm. Se realizan mediciones con un fot\'{o}metro cuyos errores de
+medici\'{o}n siguen una distribuci\'{o}n $N(0,\sigma^{2})$, es decir que si el
+fot\'{o}metro est\'{a} bien calibrado podemos suponer que las mediciones
+siguen una distribuci\'{o}n $N(70,\sigma^{2})$. Cuando el fot\'{o}metro no
+est\'{a} calibrado y se produce un error sistem\'{a}tico las mediciones siguen
+una distribuci\'{o}n $N(\mu,\sigma^{2})$ con $\mu\neq70$. Para cada uno de los
+siguientes conjuntos de mediciones independientes plantee un test adecuado
+para ver si encuentra evidencia a nivel 5\% de error sistem\'{a}tico.
+
+\begin{enumerate}
+\item 71, 68, 79
+
+\item 71, 68, 79, 84, 78, 85, 69
+
+\item 71
+
+\item 71, 84
+\end{enumerate}
+
+En uno de los casos es imposible plantear el test, \textquestiondown cu\'{a}l
+y por qu\'{e}?
+
+\item \label{ej3}Se quiere calibrar otro fot\'{o}metro. En este caso no
+est\'{a} claro si el modelo que supone errores con distribuci\'{o}n normal se
+verifica. Los siguientes son conjuntos de mediciones independientes sobre el
+gas del ejercicio anterior:
+
+\begin{enumerate}
+\item 71, 70, 72, 69, 71, 68, 93, 75, 68, 61, 94, 91
+
+\item 71, 73, 69, 74, 65, 67, 71, 69, 70, 75, 71, 68
+
+\item 71, 69, 71, 69, 71, 69, 71, 69, 71, 69, 71, 69
+\end{enumerate}
+
+En dos de los casos anteriores el modelo de errores normales no se satisface:
+\textquestiondown cu\'{a}les y por qu\'{e}? Para el conjunto de datos para el
+que parece razonable suponer un modelo de normal, haga el test que considere
+m\'{a}s apropiado para estudiar si hay evidencia de error sistem\'{a}tico a
+nivel del 5\%.
+
+\item En cada caso indique si la afirmaci\'on es verdadera o falsa y justifique:
+\begin{enumerate}
+\item El nivel de significaci\'on de un test es igual a la probabilidad de que la hip\'otesis nula sea cierta.
+\item No rechazar $H_0$ cuando \'esta es falsa es m\'as grave que rechazar $H_0$ cuando es verdadera.
+\item Si el p-valor es $0.3$, el test correspondiente rechazar\'a al nivel $0.01$.
+\item Si un test rechaza a nivel de significaci\'on $0.06$, entonces el p-valor es menor o igual a $0.06$.
+\end{enumerate}
+
+\item Consideremos un procedimiento para medir el contenido de manganeso en un
+mineral. A este procedimiento se lo ha usado muchas veces y se sabe que las
+mediciones siguen una distribuci\'{o}n normal cuya desviaci\'{o}n est\'{a}ndar
+es 0.15. Se est\'{a} estudiando si el m\'{e}todo tiene error sistem\'{a}tico.
+
+\begin{enumerate}
+\item Se hacen 8 determinaciones de un mineral preparado que tiene 7\% de
+manganeso y se obtienen los siguientes resultados:%
+\[
+6.90\qquad7.10\qquad7.20\qquad7.07\qquad7.15\qquad7.04\qquad7.18\qquad
+6.95\qquad\qquad(\overline{x}=7.074)
+\]
+\textquestiondown Cu\'{a}l es su conclusi\'{o}n si desea que la probabilidad
+de equivocarse al decir que el m\'{e}todo tiene error sistem\'{a}tico cuando
+en realidad no lo tiene sea $0.05$? (En este caso si no hay error
+sistem\'{a}tico las determinaciones siguen una distribuci\'{o}n $N(7,0.15^{2}%
+)$ y si hay error la distribuci\'{o}n es $N(\mu,0.15^{2})$ con $\mu\neq7)$.
+
+\item Si el m\'{e}todo tiene un error sistem\'{a}tico de $0.10$ (o sea, si
+$\mu=7.10)$, \textquestiondown cu\'{a}l es la probabilidad de cometer error de
+tipo II?
+
+\item Se quiere aplicar un test estad\'{\i}stico de modo que, al igual que en
+el inciso a), la probabilidad de decir que hay error sistem\'{a}tico cuando no
+lo hay sea $0.05$. Pero adem\'{a}s se desea que si hay un error
+sistem\'{a}tico de $0.10$, la probabilidad de detectarlo sea $\geq0.80$ (o lo
+que es equivalente, la probabilidad de error tipo II sea $\leq0.20$).
+
+\begin{enumerate}
+\item El test del inciso a) \textquestiondown cumple con este requisito?
+
+\item En caso contrario, \textquestiondown cu\'{a}ntas determinaciones
+habr\'{\i}a que hacer como m\'{\i}nimo?
+\end{enumerate}
+\end{enumerate}
+
+\item Se compar\'{o} un nuevo m\'{e}todo propuesto para la determinaci\'{o}n
+de la demanda de ox\'{\i}geno en aguas residuales contra el m\'{e}todo
+standard. Suponga que con ambos m\'{e}todos las determinaciones siguen una
+distribuci\'{o}n normal. Se hicieron 10 determinaciones para cada m\'{e}todo
+en una misma muestra de aguas residuales, obteni\'{e}ndose los siguientes
+resultados (en mg/l):%
+\[%
+\begin{tabular}
+[c]{|c|c|}\hline
+M\'{e}todo standard & 74.4\qquad67.2\qquad66.1\qquad71.2\qquad68.7\\
+& 69.9\qquad71.0\qquad77.8\qquad72.4\qquad70.1\\\hline
+M\'{e}todo propuesto & 71.6\qquad71.4\qquad71.3\qquad74.5\qquad71.9\\
+& 72.6\qquad69.1\qquad73.4\qquad69.5\qquad70.2\\\hline
+\end{tabular}
+\
+\]
+Ingresando los datos al R se calcularon las medias y los desv\'{\i}os
+est\'{a}ndar muestrales de estos datos:%
+\[%
+\begin{tabular}
+[c]{cccccc}
+& $n$ &  & $\overline{x}$ &  & $s$\\
+M\'{e}todo standard & 10 &  & 70.88 &  & 3.4224\\
+M\'{e}todo propuesto & 10 &  & 71.55 &  & 1.6821
+\end{tabular}
+\ \
+\]
+\textquestiondown Tenemos informaci\'{o}n suficiente para decir que la
+precisi\'{o}n del m\'{e}todo propuesto es significativamente mejor que la del
+m\'{e}todo standard a un nivel del 5\%?
+
+\item Utilizando dos m\'{e}todos de an\'{a}lisis se hicieron determinaciones
+del contenido de hierro de una muestra de un mineral. Se asume que las
+determinaciones correspondientes a ambos m\'{e}todos tienen distribuci\'{o}n
+normal. Los resultados obtenidos son los siguientes:%
+\begin{align*}
+\text{M\'{e}todo 1}\qquad n_{1}  &  =12\qquad\overline{x}=15.22\%\qquad
+s_{x}=0.10\%\\
+\text{M\'{e}todo 2}\qquad n_{2}  &  =11\qquad\overline{y}=15.30\%\qquad
+s_{y}=0.12\%
+\end{align*}
+
+
+\begin{enumerate}
+\item \textquestiondown Son significativamente diferentes las desviaciones
+est\'{a}ndares de las mediciones de ambos m\'{e}todos a un nivel del 5\%? Las
+instrucciones \texttt{qf} y \texttt{pf} del R pueden ser \'{u}tiles para
+hallar los cuantiles de la F de Fisher, o su funci\'{o}n de distribuci\'{o}n
+(por ejemplo: \texttt{qf(0.025,df1=11,df2=10)})
+
+\item \textquestiondown Son significativamente diferentes a nivel 5\% las
+medias de ambos m\'{e}todos? (para elegir el test, tenga en cuenta el
+resultado del inciso anterior).
+
+\item Repita a) y b) pero con $s_{y}=0.20\%$ (en lugar de $s_{y}=0.12\%$).
+\end{enumerate}
+
+\item Este es un ejemplo en el que se desea estudiar si un cambio en las
+condiciones de un experimento afecta el resultado. Se est\'{a} estudiando un
+procedimiento para la determinaci\'{o}n de esta\~{n}o en productos
+alimenticios. Para ello se tomaron 12 muestras del mismo producto. Se
+eligieron 6 de estas muestras al azar y se llevaron al punto de ebullici\'{o}n
+con HCl a reflujo durante 30 minutos. Con las 6 muestras restantes el tiempo
+de reflujo fue de 70 minutos. Los resultados fueron los siguientes:%
+\[%
+\begin{tabular}
+[c]{cccc}%
+Tiempo de reflujo (m)\qquad & Esta\~{n}o encontrado (mg/Kg) & $\overline{x}$ &
+$s^{2}$\\
+30 & 57, 57, 59, 56, 56, 59 & 57.33 & 1.867\\
+70 & 57, 55, 58, 59, 59, 59 & 57.83 & 2.57
+\end{tabular}
+\ \
+\]
+Suponga que la cantidad de esta\~{n}o encontrada cuando el tiempo de reflujo
+es de 30 minutos es una variable aleatoria con distribuci\'{o}n $N(\mu
+_{1},\sigma_{1}^{2})$ y dicha distribuci\'{o}n es $N(\mu_{2},\sigma_{2}^{2})$
+cuando el tiempo de reflujo es de 70 minutos. \textquestiondown Encuentra
+evidencia a nivel 5\% de que las medias de esta\~{n}o para los dos tiempos de
+ebullici\'{o}n son diferentes?
+
+\item En una estaci\'{o}n del INTA se divide un terreno en 30 parcelas
+homog\'{e}neas. Las parcelas se encuentran separadas entre ellas por un
+\'{a}rea de borde que no se siembra, de modo que los resultados de distintas
+parcelas se pueden considerar independientes. En 15 de ellas elegidas al azar
+se utiliza el fertilizante A y en las restantes el B. En las 30 parcelas se
+cultiva la misma variedad de ma\'{\i}z. Se supone que los rendimientos con el
+fertilizante A son variables aleatorias $N(\mu_{A},\sigma_{A}^{2})$ y con el
+fertilizante B son $N(\mu_{B},\sigma_{B}^{2})$. Los resultados obtenidos son:%
+\begin{align*}
+&
+\begin{tabular}
+[c]{|c|}\hline
+Parcelas con el fertilizante A\\\hline
+238\qquad237\qquad235\qquad220\qquad233\qquad203\qquad228\qquad220\qquad\\
+221\qquad215\qquad218\qquad217\qquad232\qquad225\qquad209\qquad\qquad
+\qquad\\\hline
+\end{tabular}
+\\
+&
+\begin{tabular}
+[c]{|c|}\hline
+Parcelas con el fertilizante B\\\hline
+253\qquad227\qquad241\qquad245\qquad237\qquad248\qquad250\qquad218\qquad\\
+239\qquad243\qquad257\qquad208\qquad215\qquad240\qquad229
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\\hline
+\end{tabular}
+\end{align*}
+
+
+\begin{enumerate}
+\item Proponga un test para $H_{0}:\mu_{A}=\mu_{B}$ contra $H_{1}:\mu_{A}%
+\neq\mu_{B}$.
+
+\item Proponga un test para $H_{0}:\mu_{A}=\mu_{B}$ contra $H_{1}:\mu_{A}%
+<\mu_{B}$. \textquestiondown Hubiera podido anticipar su conclusi\'{o}n
+(rechazar $H_{0}$ o no hacerlo) a partir de las cuentas realizadas en a)?
+
+\item Verifique que se satisfagan los supuestos del test.
+
+\item Construya un intervalo de confianza de nivel 0.95 para la diferencia de
+rendimiento promedio entre los fertilizantes.
+
+\item Responda a las preguntas a) y b) si en realidad los datos corresponden a
+15 parcelas cada una dividida en 2 de forma que en una mitad se us\'{o} el
+fertilizante A y en la otra el B. \textquestiondown Qu\'{e} supuesto debe
+hacerse para que este test sea v\'{a}lido? Verif\'{\i}quelo.
+\end{enumerate}
+
+\item Se compar\'{o} un m\'{e}todo espectrosc\'{o}pico de absorci\'{o}n
+at\'{o}mica de llama para determinar antimonio en la atm\'{o}sfera con el
+m\'{e}todo colorim\'{e}trico recomendado. Para seis muestras de atm\'{o}sfera
+urbana se obtuvieron los siguientes resultados:%
+\[%
+\begin{tabular}
+[c]{c|c|c}%
+\multicolumn{3}{c}{Antimonio encontrado $\left(  mg/m^{3}\right)  $}\\
+Muestra & M\'{e}todo standard & M\'{e}todo nuevo\\\hline
+1 & 25.0 & 23.8\\
+2 & 19.5 & 19.0\\
+3 & 16.6 & 15.9\\
+4 & 21.3 & 20.4\\
+5 & 20.7 & 19.6\\
+6 & 16.8 & 15.8
+\end{tabular}
+\ \
+\]
+
+
+\begin{enumerate}
+\item \textquestiondown Difieren significativamente las medias de ambos
+m\'{e}todos? Antes de aplicar un test, observe si es razonable hacer las
+suposiciones correspondientes.
+
+\item En caso de que responda afirmativamente a la pregunta anterior, calcule
+un intervalo de confianza al 95\% para la diferencia de las medias.
+
+%\item Si el valor obtenido con el nuevo m\'{e}todo para la muestra 1 hubiese
+%sido 20.0 (en lugar de 23.8), \textquestiondown cu\'{a}l hubiese sido su
+%respuesta al \'{\i}tem a)? \textquestiondown Qu\'{e} hip\'{o}tesis puede
+%testear en este caso? \textquestiondown Qu\'{e} conclusi\'{o}n puede sacar?
+
+%\item Compare los resultados obtenidos en a) y en c).
+\end{enumerate}
+
+%\item Considere los datos del ejercicio 4 (concentraci\'{o}n de ion nitrato)
+%de la Pr\'{a}ctica de Estad\'{\i}stica Descriptiva. Aplique un test de
+%hip\'{o}tesis que considere adecuado para decidir si ambos grupos de
+%estudiantes est\'{a}n midiendo lo mismo.
+
+%\item Considere los datos del ejercicio 6 (nubes tratadas y controles) de la
+%Pr\'{a}ctica de Estad\'{\i}stica Descriptiva. Aplique un test de hip\'{o}tesis
+%que considere adecuado para decidir si el tratamiento que consiste en el
+%bombardeo de las nubes con \'{a}tomos incrementa la lluvia en zonas des\'{e}rticas.
+
+%\item (continuaci\'{o}n del ejercicio \ref{ej3}) Para cada uno de los
+%conjuntos de datos para los que no es razonable suponer un modelo de Gauss,
+%aplique, cuando sea posible, un test para estudiar si hay evidencia de error sistem\'{a}tico.
+
+\item En la construcci\'on de un edificio debe usarse un concreto que tenga tensi\'on media mayor a 300 psi. Para verificar si el concreto preparado a partir del cemento ``Loma Blanca" cumple con este requerimiento, se realizan 60 mediciones independientes de la tensi\'on de este concreto. Se observa una media muestral de 304 psi y un desv\'io est\'andar muestral de 20 psi.
+\begin{enumerate}
+\item Plantee un test de nivel asint\'otico 5\% para decidir si hay evidencia de que el concreto preparado a partir del cemento ``Loma Blanca" cumple con las especificaciones.
+\item Calcule el p-valor.
+\item En base al resultado del \'item (b), decir cu\'al ser\'ia la conclusi\'on de un test de nivel asint\'otico 10\%.
+\end{enumerate}
+
+\item Sea $X_{1},\ldots,X_{n}$ una muestra aleatoria $Bi(1,p)$.
+
+\begin{enumerate}
+	\item Proponga un test asint\'{o}tico de nivel $\alpha$ para $H_{0}:p=p_{0}$
+	contra $H_{1}:p\neq p_{0}$.
+	
+	\item Se tiene la hip\'{o}tesis de que en una poblaci\'{o}n de insectos la
+	proporci\'{o}n de machos y de hembras es la misma, es decir que la
+	proporci\'{o}n de hembras y de machos es 0.5. Testear esta hip\'{o}tesis a
+	nivel 0.05 sabiendo que se tomaron 100 insectos obteni\'{e}ndose 43 machos.
+	
+	\item \textquestiondown Qu\'{e} test utilizar\'{\i}a si sospechara que el
+	porcentaje de hembras es mayor que el de machos?
+\end{enumerate}
+
+
+
+%\item Se arroja un dado 100 veces. La suma de los resultados dio 368 en vez de
+%los 350 esperados. \textquestiondown Encuentra evidencia a nivel 1\% de que el
+%dado est\'{a} cargado o esta diferencia se puede explicar como una
+%variaci\'{o}n aleatoria? Escribir las variables aleatorias involucradas en el
+%test. Definir claramente los par\'{a}metros y las hip\'{o}tesis que se hacen
+%sobre ellos. \textquestiondown El test que realiza es exacto o asint\'{o}tico?
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
